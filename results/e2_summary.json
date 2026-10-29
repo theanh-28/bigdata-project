@@ -1,0 +1,32 @@
+{
+  "timestamp": "2026-10-29T14:48:51+07:00",
+  "experiment": "E2",
+  "source_collection": "reviews",
+  "isolated_target_collection": "reviews_e2",
+  "v1_documents_copied": 100000,
+  "v2_documents_inserted": 100000,
+  "count_total": 200000,
+  "version_counts": {
+    "1": 100000,
+    "2": 100000
+  },
+  "copy_v1_seconds": 2.255,
+  "insert_v2_seconds": 2.495,
+  "insert_v2_docs_per_s": 40075.16,
+  "mixed_query_business_id": "XQfwVwDr-v0ZS3_CbbE5Xw",
+  "mixed_query_p50_ms": 64.9086,
+  "mixed_query_runs_ms": [
+    97.7543,
+    65.8638,
+    62.9112,
+    66.8058,
+    62.7006,
+    61.7305,
+    67.4834,
+    67.216,
+    63.6641,
+    63.9534
+  ],
+  "schema_migrations_performed": 0,
+  "note": "E2 uses a separate collection so that E2's extra 2*n documents do not change E3/E4's dataset sizes."
+}

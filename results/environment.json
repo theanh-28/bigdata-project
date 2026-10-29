@@ -1,0 +1,32 @@
+{
+  "captured_at": "2026-10-29T14:48:10+07:00",
+  "os": "Windows-11-10.0.26200-SP0",
+  "python_version": "3.12.13",
+  "cpu": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+  "logical_cpu_count": 8,
+  "physical_cpu_count": 4,
+  "host_ram_gib": 15.77,
+  "disk_type": "unknown (not recorded)",
+  "docker_version": "Docker version 29.5.3, build d1c06ef",
+  "docker_compose_version": "Docker Compose version v5.1.4",
+  "mongodb_version": "8.0.34",
+  "mongodb_git_version": "51db4515a6597aedcf6188ee4e48a27e65b065ae",
+  "pymongo_version": "4.19.0",
+  "container_memory_visible_mb": 7823,
+  "container_memory_limit_mb": 1500,
+  "mongo_host_info": {
+    "currentTime": "2026-10-29 07:48:10.491000",
+    "hostname": "f9a3cab5b758",
+    "cpuAddrSize": 64,
+    "memSizeMB": 7823,
+    "memLimitMB": 1500,
+    "numCores": 8,
+    "numCoresAvailableToProcess": 8,
+    "numPhysicalCores": 4,
+    "numCpuSockets": 1,
+    "cpuArch": "x86_64",
+    "numaEnabled": false,
+    "numNumaNodes": 1
+  },
+  "note": "Host RAM is separate from container memory limits. E4 runtime stats are in docker_stats_e4_min_cache.txt; post-run Docker snapshot is in e5_post_run_snapshot.txt."
+}

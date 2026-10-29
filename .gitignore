@@ -1,0 +1,23 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+diagnostics/
+backups/
+deliverables/
+
+# Keep source datasets local; Yelp JSONL is not published.
+data/raw/
+data/generated/
+
+# Publish the latest clean E1-E5 run outputs.
+# Personal runbooks and secondary templates stay local.
+BAT_DAU_NHANH.md
+CAP_NHAT_BO_THUC_HANH.md
+HUONG_DAN_E5C_TUNG_BUOC.md
+HUONG_DAN_XU_LY_LOI.md
+KIEM_TRA.md
+README_VI.md
+report/CHUONG3_TEMPLATE.md
+report/CHUONG3_TEMPLATE.tex

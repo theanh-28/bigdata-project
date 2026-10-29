@@ -1,0 +1,66 @@
+name: mongodb-bigdata-lab-shard
+services:
+  cfg1:
+    image: mongo:8.0
+    container_name: mongo-cfg1
+    command: ["mongod", "--configsvr", "--replSet", "cfgrs", "--port", "27019", "--bind_ip_all", "--wiredTigerCacheSizeGB", "0.256"]
+    ports:
+      - "127.0.0.1:27119:27019"
+    mem_limit: 700m
+    volumes:
+      - cfg_data:/data/configdb
+    networks: [mongo-net]
+
+  shard1:
+    image: mongo:8.0
+    container_name: mongo-shard1
+    command: ["mongod", "--shardsvr", "--replSet", "sh1", "--port", "27018", "--bind_ip_all", "--wiredTigerCacheSizeGB", "0.5"]
+    ports:
+      - "127.0.0.1:27101:27018"
+    mem_limit: ${SHARD_MEMORY_LIMIT:-1500m}
+    volumes:
+      - shard1_data:/data/db
+    networks: [mongo-net]
+
+  shard2:
+    image: mongo:8.0
+    container_name: mongo-shard2
+    command: ["mongod", "--shardsvr", "--replSet", "sh2", "--port", "27018", "--bind_ip_all", "--wiredTigerCacheSizeGB", "0.5"]
+    ports:
+      - "127.0.0.1:27102:27018"
+    mem_limit: ${SHARD_MEMORY_LIMIT:-1500m}
+    volumes:
+      - shard2_data:/data/db
+    networks: [mongo-net]
+
+  shard3:
+    image: mongo:8.0
+    container_name: mongo-shard3
+    command: ["mongod", "--shardsvr", "--replSet", "sh3", "--port", "27018", "--bind_ip_all", "--wiredTigerCacheSizeGB", "0.5"]
+    ports:
+      - "127.0.0.1:27103:27018"
+    mem_limit: ${SHARD_MEMORY_LIMIT:-1500m}
+    volumes:
+      - shard3_data:/data/db
+    networks: [mongo-net]
+
+  mongos:
+    image: mongo:8.0
+    container_name: mongo-mongos
+    command: ["mongos", "--configdb", "cfgrs/cfg1:27019", "--bind_ip_all", "--port", "27017"]
+    ports:
+      - "127.0.0.1:27017:27017"
+    mem_limit: 600m
+    depends_on: [cfg1, shard1, shard2, shard3]
+    volumes:
+      - ../scripts:/scripts:ro
+    networks: [mongo-net]
+
+networks:
+  mongo-net:
+    driver: bridge
+volumes:
+  cfg_data:
+  shard1_data:
+  shard2_data:
+  shard3_data:

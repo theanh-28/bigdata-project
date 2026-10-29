@@ -1,0 +1,3922 @@
+{
+  "n_docs": 1000000,
+  "fixtures": {
+    "business_id": "LGi-u2zVoSciM0F_2nSg8g",
+    "user_id": "zfD3xhVNkGJs-AOOSslqtQ",
+    "date_gte": "2013-09-01",
+    "date_lt": "2013-10-01",
+    "seed": 42,
+    "fixture_source": "deterministically selected from the first 2,000 natural-order documents in the initial checkpoint",
+    "first_run_n_docs": 500000
+  },
+  "rounds": 3,
+  "repeats_per_query": 10,
+  "queries": {
+    "no_index:round1:Q1_business_id": {
+      "stats": {
+        "docs_examined": 1000000,
+        "keys_examined": 0,
+        "explain_ms": 944
+      },
+      "explain": {
+        "explainVersion": "1",
+        "queryPlanner": {
+          "namespace": "yelp.reviews",
+          "parsedQuery": {
+            "business_id": {
+              "$eq": "LGi-u2zVoSciM0F_2nSg8g"
+            }
+          },
+          "indexFilterSet": false,
+          "queryHash": "56E4EBD4",
+          "planCacheShapeHash": "56E4EBD4",
+          "planCacheKey": "64A1F91C",
+          "optimizationTimeMillis": 0,
+          "maxIndexedOrSolutionsReached": false,
+          "maxIndexedAndSolutionsReached": false,
+          "maxScansToExplodeReached": false,
+          "prunedSimilarIndexes": false,
+          "winningPlan": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "COLLSCAN",
+              "filter": {
+                "business_id": {
+                  "$eq": "LGi-u2zVoSciM0F_2nSg8g"
+                }
+              },
+              "direction": "forward"
+            }
+          },
+          "rejectedPlans": []
+        },
+        "executionStats": {
+          "executionSuccess": true,
+          "nReturned": 19,
+          "executionTimeMillis": 944,
+          "totalKeysExamined": 0,
+          "totalDocsExamined": 1000000,
+          "executionStages": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "nReturned": 19,
+            "executionTimeMillisEstimate": 943,
+            "works": 1000001,
+            "advanced": 19,
+            "needTime": 999981,
+            "needYield": 0,
+            "saveState": 48,
+            "restoreState": 48,
+            "isEOF": 1,
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "COLLSCAN",
+              "filter": {
+                "business_id": {
+                  "$eq": "LGi-u2zVoSciM0F_2nSg8g"
+                }
+              },
+              "nReturned": 19,
+              "executionTimeMillisEstimate": 924,
+              "works": 1000001,
+              "advanced": 19,
+              "needTime": 999981,
+              "needYield": 0,
+              "saveState": 48,
+              "restoreState": 48,
+              "isEOF": 1,
+              "direction": "forward",
+              "docsExamined": 1000000
+            }
+          }
+        },
+        "queryShapeHash": "E85AFF87F3DA2366985B9CFFFD95F2470E42C3CC6BCC7C0D3201AF9B218E1F1E",
+        "command": {
+          "find": "reviews",
+          "filter": {
+            "business_id": "LGi-u2zVoSciM0F_2nSg8g"
+          },
+          "projection": {
+            "_id": 1
+          },
+          "$db": "yelp"
+        },
+        "serverInfo": {
+          "host": "f9a3cab5b758",
+          "port": 27017,
+          "version": "8.0.34",
+          "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+        },
+        "serverParameters": {
+          "internalQueryFacetBufferSizeBytes": 104857600,
+          "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+          "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+          "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+          "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+          "internalQueryProhibitBlockingMergeOnMongoS": 0,
+          "internalQueryMaxAddToSetBytes": 104857600,
+          "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+          "internalQueryFrameworkControl": "trySbeRestricted",
+          "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+        },
+        "ok": 1.0
+      }
+    },
+    "no_index:round1:Q2_user_id": {
+      "stats": {
+        "docs_examined": 1000000,
+        "keys_examined": 0,
+        "explain_ms": 950
+      },
+      "explain": {
+        "explainVersion": "1",
+        "queryPlanner": {
+          "namespace": "yelp.reviews",
+          "parsedQuery": {
+            "user_id": {
+              "$eq": "zfD3xhVNkGJs-AOOSslqtQ"
+            }
+          },
+          "indexFilterSet": false,
+          "queryHash": "590112A4",
+          "planCacheShapeHash": "590112A4",
+          "planCacheKey": "DC602A2C",
+          "optimizationTimeMillis": 0,
+          "maxIndexedOrSolutionsReached": false,
+          "maxIndexedAndSolutionsReached": false,
+          "maxScansToExplodeReached": false,
+          "prunedSimilarIndexes": false,
+          "winningPlan": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "COLLSCAN",
+              "filter": {
+                "user_id": {
+                  "$eq": "zfD3xhVNkGJs-AOOSslqtQ"
+                }
+              },
+              "direction": "forward"
+            }
+          },
+          "rejectedPlans": []
+        },
+        "executionStats": {
+          "executionSuccess": true,
+          "nReturned": 75,
+          "executionTimeMillis": 950,
+          "totalKeysExamined": 0,
+          "totalDocsExamined": 1000000,
+          "executionStages": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "nReturned": 75,
+            "executionTimeMillisEstimate": 924,
+            "works": 1000001,
+            "advanced": 75,
+            "needTime": 999925,
+            "needYield": 0,
+            "saveState": 49,
+            "restoreState": 49,
+            "isEOF": 1,
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "COLLSCAN",
+              "filter": {
+                "user_id": {
+                  "$eq": "zfD3xhVNkGJs-AOOSslqtQ"
+                }
+              },
+              "nReturned": 75,
+              "executionTimeMillisEstimate": 924,
+              "works": 1000001,
+              "advanced": 75,
+              "needTime": 999925,
+              "needYield": 0,
+              "saveState": 49,
+              "restoreState": 49,
+              "isEOF": 1,
+              "direction": "forward",
+              "docsExamined": 1000000
+            }
+          }
+        },
+        "queryShapeHash": "E852616D3ACB59342A9CBB9088146B2349A585D566AA3BE789EC3A7F12C3DE9C",
+        "command": {
+          "find": "reviews",
+          "filter": {
+            "user_id": "zfD3xhVNkGJs-AOOSslqtQ"
+          },
+          "projection": {
+            "_id": 1
+          },
+          "$db": "yelp"
+        },
+        "serverInfo": {
+          "host": "f9a3cab5b758",
+          "port": 27017,
+          "version": "8.0.34",
+          "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+        },
+        "serverParameters": {
+          "internalQueryFacetBufferSizeBytes": 104857600,
+          "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+          "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+          "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+          "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+          "internalQueryProhibitBlockingMergeOnMongoS": 0,
+          "internalQueryMaxAddToSetBytes": 104857600,
+          "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+          "internalQueryFrameworkControl": "trySbeRestricted",
+          "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+        },
+        "ok": 1.0
+      }
+    },
+    "no_index:round1:Q3_date_month": {
+      "stats": {
+        "docs_examined": 1000000,
+        "keys_examined": 0,
+        "explain_ms": 940
+      },
+      "explain": {
+        "explainVersion": "1",
+        "queryPlanner": {
+          "namespace": "yelp.reviews",
+          "parsedQuery": {
+            "$and": [
+              {
+                "date": {
+                  "$lt": "2013-10-01"
+                }
+              },
+              {
+                "date": {
+                  "$gte": "2013-09-01"
+                }
+              }
+            ]
+          },
+          "indexFilterSet": false,
+          "queryHash": "3E3E3A20",
+          "planCacheShapeHash": "3E3E3A20",
+          "planCacheKey": "38660E00",
+          "optimizationTimeMillis": 0,
+          "maxIndexedOrSolutionsReached": false,
+          "maxIndexedAndSolutionsReached": false,
+          "maxScansToExplodeReached": false,
+          "prunedSimilarIndexes": false,
+          "winningPlan": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "COLLSCAN",
+              "filter": {
+                "$and": [
+                  {
+                    "date": {
+                      "$lt": "2013-10-01"
+                    }
+                  },
+                  {
+                    "date": {
+                      "$gte": "2013-09-01"
+                    }
+                  }
+                ]
+              },
+              "direction": "forward"
+            }
+          },
+          "rejectedPlans": []
+        },
+        "executionStats": {
+          "executionSuccess": true,
+          "nReturned": 5714,
+          "executionTimeMillis": 940,
+          "totalKeysExamined": 0,
+          "totalDocsExamined": 1000000,
+          "executionStages": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "nReturned": 5714,
+            "executionTimeMillisEstimate": 911,
+            "works": 1000001,
+            "advanced": 5714,
+            "needTime": 994286,
+            "needYield": 0,
+            "saveState": 47,
+            "restoreState": 47,
+            "isEOF": 1,
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "COLLSCAN",
+              "filter": {
+                "$and": [
+                  {
+                    "date": {
+                      "$lt": "2013-10-01"
+                    }
+                  },
+                  {
+                    "date": {
+                      "$gte": "2013-09-01"
+                    }
+                  }
+                ]
+              },
+              "nReturned": 5714,
+              "executionTimeMillisEstimate": 911,
+              "works": 1000001,
+              "advanced": 5714,
+              "needTime": 994286,
+              "needYield": 0,
+              "saveState": 47,
+              "restoreState": 47,
+              "isEOF": 1,
+              "direction": "forward",
+              "docsExamined": 1000000
+            }
+          }
+        },
+        "queryShapeHash": "22DCAEB5364824CD33F4F911CD52E4AD4D447A8E66552369769140F3F7EAE482",
+        "command": {
+          "find": "reviews",
+          "filter": {
+            "date": {
+              "$gte": "2013-09-01",
+              "$lt": "2013-10-01"
+            }
+          },
+          "projection": {
+            "_id": 1
+          },
+          "$db": "yelp"
+        },
+        "serverInfo": {
+          "host": "f9a3cab5b758",
+          "port": 27017,
+          "version": "8.0.34",
+          "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+        },
+        "serverParameters": {
+          "internalQueryFacetBufferSizeBytes": 104857600,
+          "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+          "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+          "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+          "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+          "internalQueryProhibitBlockingMergeOnMongoS": 0,
+          "internalQueryMaxAddToSetBytes": 104857600,
+          "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+          "internalQueryFrameworkControl": "trySbeRestricted",
+          "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+        },
+        "ok": 1.0
+      }
+    },
+    "no_index:round1:Q4_group_top10": {
+      "stats": {
+        "docs_examined": 1000000,
+        "keys_examined": 0,
+        "explain_ms": 1206
+      },
+      "explain": {
+        "explainVersion": "2",
+        "stages": [
+          {
+            "$cursor": {
+              "queryPlanner": {
+                "namespace": "yelp.reviews",
+                "parsedQuery": {},
+                "indexFilterSet": false,
+                "queryHash": "739402EB",
+                "planCacheShapeHash": "739402EB",
+                "planCacheKey": "4588F5D7",
+                "optimizationTimeMillis": 0,
+                "maxIndexedOrSolutionsReached": false,
+                "maxIndexedAndSolutionsReached": false,
+                "maxScansToExplodeReached": false,
+                "prunedSimilarIndexes": false,
+                "winningPlan": {
+                  "isCached": false,
+                  "queryPlan": {
+                    "stage": "GROUP",
+                    "planNodeId": 3,
+                    "inputStage": {
+                      "stage": "COLLSCAN",
+                      "planNodeId": 1,
+                      "filter": {},
+                      "direction": "forward"
+                    }
+                  },
+                  "slotBasedPlan": {
+                    "slots": "$$RESULT=s14 env: {  }",
+                    "stages": "[3] project [s14 = newObj(\"_id\", s8, \"review_count\", s12, \"avg_stars\", s13)] \n[3] project [s12 = (convert ( s9, int32) ?: s9), s13 = \n    if (s11 == 0ll) \n    then null \n    else (doubleDoubleSumFinalize(s10) / s11) \n] \n[3] group [s8] [s9 = count(), s10 = aggDoubleDoubleSum(s2), s11 = sum(\n    if ((typeMatch(s2, 1088) ?: true) || !(isNumber(s2))) \n    then 0ll \n    else 1ll \n)] spillSlots[s5, s6, s7] mergingExprs[sum(s5), aggMergeDoubleDoubleSums(s6), sum(s7)] \n[3] project [s8 = (s1 ?: null)] \n[1] scan s3 s4 none none none none none none lowPriority [s1 = business_id, s2 = stars] @\"1d2a0186-3b53-45a1-bde9-8b6112383cb9\" true false "
+                  }
+                },
+                "rejectedPlans": []
+              },
+              "executionStats": {
+                "executionSuccess": true,
+                "nReturned": 27095,
+                "executionTimeMillis": 1206,
+                "totalKeysExamined": 0,
+                "totalDocsExamined": 1000000,
+                "executionStages": {
+                  "stage": "project",
+                  "planNodeId": 3,
+                  "nReturned": 27095,
+                  "executionTimeMillisEstimate": 1181,
+                  "opens": 1,
+                  "closes": 1,
+                  "saveState": 73,
+                  "restoreState": 73,
+                  "isEOF": 1,
+                  "projections": {
+                    "14": "newObj(\"_id\", s8, \"review_count\", s12, \"avg_stars\", s13) "
+                  },
+                  "inputStage": {
+                    "stage": "project",
+                    "planNodeId": 3,
+                    "nReturned": 27095,
+                    "executionTimeMillisEstimate": 1181,
+                    "opens": 1,
+                    "closes": 1,
+                    "saveState": 73,
+                    "restoreState": 73,
+                    "isEOF": 1,
+                    "projections": {
+                      "12": "(convert ( s9, int32) ?: s9) ",
+                      "13": "\n    if (s11 == 0ll) \n    then null \n    else (doubleDoubleSumFinalize(s10) / s11) \n"
+                    },
+                    "inputStage": {
+                      "stage": "group",
+                      "planNodeId": 3,
+                      "nReturned": 27095,
+                      "executionTimeMillisEstimate": 1177,
+                      "opens": 1,
+                      "closes": 1,
+                      "saveState": 73,
+                      "restoreState": 73,
+                      "isEOF": 1,
+                      "groupBySlots": [
+                        8
+                      ],
+                      "expressions": {
+                        "9": "count() ",
+                        "10": "aggDoubleDoubleSum(s2) ",
+                        "11": "sum(\n    if ((typeMatch(s2, 1088) ?: true) || !(isNumber(s2))) \n    then 0ll \n    else 1ll \n) ",
+                        "initExprs": {
+                          "9": null,
+                          "10": null,
+                          "11": null
+                        }
+                      },
+                      "mergingExprs": {
+                        "5": "sum(s5) ",
+                        "6": "aggMergeDoubleDoubleSums(s6) ",
+                        "7": "sum(s7) "
+                      },
+                      "usedDisk": false,
+                      "spills": 0,
+                      "spilledBytes": 0,
+                      "spilledRecords": 0,
+                      "spilledDataStorageSize": 0,
+                      "inputStage": {
+                        "stage": "project",
+                        "planNodeId": 3,
+                        "nReturned": 1000000,
+                        "executionTimeMillisEstimate": 829,
+                        "opens": 1,
+                        "closes": 1,
+                        "saveState": 73,
+                        "restoreState": 73,
+                        "isEOF": 1,
+                        "projections": {
+                          "8": "(s1 ?: null) "
+                        },
+                        "inputStage": {
+                          "stage": "scan",
+                          "planNodeId": 1,
+                          "nReturned": 1000000,
+                          "executionTimeMillisEstimate": 813,
+                          "opens": 1,
+                          "closes": 1,
+                          "saveState": 73,
+                          "restoreState": 73,
+                          "isEOF": 1,
+                          "numReads": 1000000,
+                          "recordSlot": 3,
+                          "recordIdSlot": 4,
+                          "scanFieldNames": [
+                            "business_id",
+                            "stars"
+                          ],
+                          "scanFieldSlots": [
+                            1,
+                            2
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "nReturned": 27095,
+            "executionTimeMillisEstimate": 1193
+          },
+          {
+            "$sort": {
+              "sortKey": {
+                "review_count": -1
+              },
+              "limit": 10
+            },
+            "totalDataSizeSortedBytesEstimate": 4270,
+            "usedDisk": false,
+            "spills": 0,
+            "spilledDataStorageSize": 0,
+            "nReturned": 10,
+            "executionTimeMillisEstimate": 1202
+          }
+        ],
+        "queryShapeHash": "7A43770E804CF206CCBAA38152620774D52841EC8E3474875A2BC7B92B06F04C",
+        "serverInfo": {
+          "host": "f9a3cab5b758",
+          "port": 27017,
+          "version": "8.0.34",
+          "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+        },
+        "serverParameters": {
+          "internalQueryFacetBufferSizeBytes": 104857600,
+          "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+          "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+          "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+          "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+          "internalQueryProhibitBlockingMergeOnMongoS": 0,
+          "internalQueryMaxAddToSetBytes": 104857600,
+          "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+          "internalQueryFrameworkControl": "trySbeRestricted",
+          "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+        },
+        "command": {
+          "aggregate": "reviews",
+          "pipeline": [
+            {
+              "$group": {
+                "_id": "$business_id",
+                "review_count": {
+                  "$sum": 1
+                },
+                "avg_stars": {
+                  "$avg": "$stars"
+                }
+              }
+            },
+            {
+              "$sort": {
+                "review_count": -1
+              }
+            },
+            {
+              "$limit": 10
+            }
+          ],
+          "cursor": {},
+          "allowDiskUse": true,
+          "$db": "yelp"
+        },
+        "ok": 1.0
+      }
+    },
+    "no_index:round2:Q1_business_id": {
+      "stats": {
+        "docs_examined": 1000000,
+        "keys_examined": 0,
+        "explain_ms": 864
+      },
+      "explain": {
+        "explainVersion": "1",
+        "queryPlanner": {
+          "namespace": "yelp.reviews",
+          "parsedQuery": {
+            "business_id": {
+              "$eq": "LGi-u2zVoSciM0F_2nSg8g"
+            }
+          },
+          "indexFilterSet": false,
+          "queryHash": "56E4EBD4",
+          "planCacheShapeHash": "56E4EBD4",
+          "planCacheKey": "64A1F91C",
+          "optimizationTimeMillis": 0,
+          "maxIndexedOrSolutionsReached": false,
+          "maxIndexedAndSolutionsReached": false,
+          "maxScansToExplodeReached": false,
+          "prunedSimilarIndexes": false,
+          "winningPlan": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "COLLSCAN",
+              "filter": {
+                "business_id": {
+                  "$eq": "LGi-u2zVoSciM0F_2nSg8g"
+                }
+              },
+              "direction": "forward"
+            }
+          },
+          "rejectedPlans": []
+        },
+        "executionStats": {
+          "executionSuccess": true,
+          "nReturned": 19,
+          "executionTimeMillis": 864,
+          "totalKeysExamined": 0,
+          "totalDocsExamined": 1000000,
+          "executionStages": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "nReturned": 19,
+            "executionTimeMillisEstimate": 818,
+            "works": 1000001,
+            "advanced": 19,
+            "needTime": 999981,
+            "needYield": 0,
+            "saveState": 44,
+            "restoreState": 44,
+            "isEOF": 1,
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "COLLSCAN",
+              "filter": {
+                "business_id": {
+                  "$eq": "LGi-u2zVoSciM0F_2nSg8g"
+                }
+              },
+              "nReturned": 19,
+              "executionTimeMillisEstimate": 818,
+              "works": 1000001,
+              "advanced": 19,
+              "needTime": 999981,
+              "needYield": 0,
+              "saveState": 44,
+              "restoreState": 44,
+              "isEOF": 1,
+              "direction": "forward",
+              "docsExamined": 1000000
+            }
+          }
+        },
+        "queryShapeHash": "E85AFF87F3DA2366985B9CFFFD95F2470E42C3CC6BCC7C0D3201AF9B218E1F1E",
+        "command": {
+          "find": "reviews",
+          "filter": {
+            "business_id": "LGi-u2zVoSciM0F_2nSg8g"
+          },
+          "projection": {
+            "_id": 1
+          },
+          "$db": "yelp"
+        },
+        "serverInfo": {
+          "host": "f9a3cab5b758",
+          "port": 27017,
+          "version": "8.0.34",
+          "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+        },
+        "serverParameters": {
+          "internalQueryFacetBufferSizeBytes": 104857600,
+          "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+          "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+          "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+          "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+          "internalQueryProhibitBlockingMergeOnMongoS": 0,
+          "internalQueryMaxAddToSetBytes": 104857600,
+          "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+          "internalQueryFrameworkControl": "trySbeRestricted",
+          "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+        },
+        "ok": 1.0
+      }
+    },
+    "no_index:round2:Q2_user_id": {
+      "stats": {
+        "docs_examined": 1000000,
+        "keys_examined": 0,
+        "explain_ms": 926
+      },
+      "explain": {
+        "explainVersion": "1",
+        "queryPlanner": {
+          "namespace": "yelp.reviews",
+          "parsedQuery": {
+            "user_id": {
+              "$eq": "zfD3xhVNkGJs-AOOSslqtQ"
+            }
+          },
+          "indexFilterSet": false,
+          "queryHash": "590112A4",
+          "planCacheShapeHash": "590112A4",
+          "planCacheKey": "DC602A2C",
+          "optimizationTimeMillis": 0,
+          "maxIndexedOrSolutionsReached": false,
+          "maxIndexedAndSolutionsReached": false,
+          "maxScansToExplodeReached": false,
+          "prunedSimilarIndexes": false,
+          "winningPlan": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "COLLSCAN",
+              "filter": {
+                "user_id": {
+                  "$eq": "zfD3xhVNkGJs-AOOSslqtQ"
+                }
+              },
+              "direction": "forward"
+            }
+          },
+          "rejectedPlans": []
+        },
+        "executionStats": {
+          "executionSuccess": true,
+          "nReturned": 75,
+          "executionTimeMillis": 926,
+          "totalKeysExamined": 0,
+          "totalDocsExamined": 1000000,
+          "executionStages": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "nReturned": 75,
+            "executionTimeMillisEstimate": 899,
+            "works": 1000001,
+            "advanced": 75,
+            "needTime": 999925,
+            "needYield": 0,
+            "saveState": 47,
+            "restoreState": 47,
+            "isEOF": 1,
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "COLLSCAN",
+              "filter": {
+                "user_id": {
+                  "$eq": "zfD3xhVNkGJs-AOOSslqtQ"
+                }
+              },
+              "nReturned": 75,
+              "executionTimeMillisEstimate": 899,
+              "works": 1000001,
+              "advanced": 75,
+              "needTime": 999925,
+              "needYield": 0,
+              "saveState": 47,
+              "restoreState": 47,
+              "isEOF": 1,
+              "direction": "forward",
+              "docsExamined": 1000000
+            }
+          }
+        },
+        "queryShapeHash": "E852616D3ACB59342A9CBB9088146B2349A585D566AA3BE789EC3A7F12C3DE9C",
+        "command": {
+          "find": "reviews",
+          "filter": {
+            "user_id": "zfD3xhVNkGJs-AOOSslqtQ"
+          },
+          "projection": {
+            "_id": 1
+          },
+          "$db": "yelp"
+        },
+        "serverInfo": {
+          "host": "f9a3cab5b758",
+          "port": 27017,
+          "version": "8.0.34",
+          "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+        },
+        "serverParameters": {
+          "internalQueryFacetBufferSizeBytes": 104857600,
+          "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+          "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+          "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+          "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+          "internalQueryProhibitBlockingMergeOnMongoS": 0,
+          "internalQueryMaxAddToSetBytes": 104857600,
+          "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+          "internalQueryFrameworkControl": "trySbeRestricted",
+          "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+        },
+        "ok": 1.0
+      }
+    },
+    "no_index:round2:Q3_date_month": {
+      "stats": {
+        "docs_examined": 1000000,
+        "keys_examined": 0,
+        "explain_ms": 1018
+      },
+      "explain": {
+        "explainVersion": "1",
+        "queryPlanner": {
+          "namespace": "yelp.reviews",
+          "parsedQuery": {
+            "$and": [
+              {
+                "date": {
+                  "$lt": "2013-10-01"
+                }
+              },
+              {
+                "date": {
+                  "$gte": "2013-09-01"
+                }
+              }
+            ]
+          },
+          "indexFilterSet": false,
+          "queryHash": "3E3E3A20",
+          "planCacheShapeHash": "3E3E3A20",
+          "planCacheKey": "38660E00",
+          "optimizationTimeMillis": 0,
+          "maxIndexedOrSolutionsReached": false,
+          "maxIndexedAndSolutionsReached": false,
+          "maxScansToExplodeReached": false,
+          "prunedSimilarIndexes": false,
+          "winningPlan": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "COLLSCAN",
+              "filter": {
+                "$and": [
+                  {
+                    "date": {
+                      "$lt": "2013-10-01"
+                    }
+                  },
+                  {
+                    "date": {
+                      "$gte": "2013-09-01"
+                    }
+                  }
+                ]
+              },
+              "direction": "forward"
+            }
+          },
+          "rejectedPlans": []
+        },
+        "executionStats": {
+          "executionSuccess": true,
+          "nReturned": 5714,
+          "executionTimeMillis": 1018,
+          "totalKeysExamined": 0,
+          "totalDocsExamined": 1000000,
+          "executionStages": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "nReturned": 5714,
+            "executionTimeMillisEstimate": 997,
+            "works": 1000001,
+            "advanced": 5714,
+            "needTime": 994286,
+            "needYield": 0,
+            "saveState": 52,
+            "restoreState": 52,
+            "isEOF": 1,
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "COLLSCAN",
+              "filter": {
+                "$and": [
+                  {
+                    "date": {
+                      "$lt": "2013-10-01"
+                    }
+                  },
+                  {
+                    "date": {
+                      "$gte": "2013-09-01"
+                    }
+                  }
+                ]
+              },
+              "nReturned": 5714,
+              "executionTimeMillisEstimate": 997,
+              "works": 1000001,
+              "advanced": 5714,
+              "needTime": 994286,
+              "needYield": 0,
+              "saveState": 52,
+              "restoreState": 52,
+              "isEOF": 1,
+              "direction": "forward",
+              "docsExamined": 1000000
+            }
+          }
+        },
+        "queryShapeHash": "22DCAEB5364824CD33F4F911CD52E4AD4D447A8E66552369769140F3F7EAE482",
+        "command": {
+          "find": "reviews",
+          "filter": {
+            "date": {
+              "$gte": "2013-09-01",
+              "$lt": "2013-10-01"
+            }
+          },
+          "projection": {
+            "_id": 1
+          },
+          "$db": "yelp"
+        },
+        "serverInfo": {
+          "host": "f9a3cab5b758",
+          "port": 27017,
+          "version": "8.0.34",
+          "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+        },
+        "serverParameters": {
+          "internalQueryFacetBufferSizeBytes": 104857600,
+          "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+          "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+          "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+          "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+          "internalQueryProhibitBlockingMergeOnMongoS": 0,
+          "internalQueryMaxAddToSetBytes": 104857600,
+          "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+          "internalQueryFrameworkControl": "trySbeRestricted",
+          "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+        },
+        "ok": 1.0
+      }
+    },
+    "no_index:round2:Q4_group_top10": {
+      "stats": {
+        "docs_examined": 1000000,
+        "keys_examined": 0,
+        "explain_ms": 1199
+      },
+      "explain": {
+        "explainVersion": "2",
+        "stages": [
+          {
+            "$cursor": {
+              "queryPlanner": {
+                "namespace": "yelp.reviews",
+                "parsedQuery": {},
+                "indexFilterSet": false,
+                "queryHash": "739402EB",
+                "planCacheShapeHash": "739402EB",
+                "planCacheKey": "4588F5D7",
+                "optimizationTimeMillis": 0,
+                "maxIndexedOrSolutionsReached": false,
+                "maxIndexedAndSolutionsReached": false,
+                "maxScansToExplodeReached": false,
+                "prunedSimilarIndexes": false,
+                "winningPlan": {
+                  "isCached": false,
+                  "queryPlan": {
+                    "stage": "GROUP",
+                    "planNodeId": 3,
+                    "inputStage": {
+                      "stage": "COLLSCAN",
+                      "planNodeId": 1,
+                      "filter": {},
+                      "direction": "forward"
+                    }
+                  },
+                  "slotBasedPlan": {
+                    "slots": "$$RESULT=s14 env: {  }",
+                    "stages": "[3] project [s14 = newObj(\"_id\", s8, \"review_count\", s12, \"avg_stars\", s13)] \n[3] project [s12 = (convert ( s9, int32) ?: s9), s13 = \n    if (s11 == 0ll) \n    then null \n    else (doubleDoubleSumFinalize(s10) / s11) \n] \n[3] group [s8] [s9 = count(), s10 = aggDoubleDoubleSum(s2), s11 = sum(\n    if ((typeMatch(s2, 1088) ?: true) || !(isNumber(s2))) \n    then 0ll \n    else 1ll \n)] spillSlots[s5, s6, s7] mergingExprs[sum(s5), aggMergeDoubleDoubleSums(s6), sum(s7)] \n[3] project [s8 = (s1 ?: null)] \n[1] scan s3 s4 none none none none none none lowPriority [s1 = business_id, s2 = stars] @\"1d2a0186-3b53-45a1-bde9-8b6112383cb9\" true false "
+                  }
+                },
+                "rejectedPlans": []
+              },
+              "executionStats": {
+                "executionSuccess": true,
+                "nReturned": 27095,
+                "executionTimeMillis": 1199,
+                "totalKeysExamined": 0,
+                "totalDocsExamined": 1000000,
+                "executionStages": {
+                  "stage": "project",
+                  "planNodeId": 3,
+                  "nReturned": 27095,
+                  "executionTimeMillisEstimate": 1175,
+                  "opens": 1,
+                  "closes": 1,
+                  "saveState": 73,
+                  "restoreState": 73,
+                  "isEOF": 1,
+                  "projections": {
+                    "14": "newObj(\"_id\", s8, \"review_count\", s12, \"avg_stars\", s13) "
+                  },
+                  "inputStage": {
+                    "stage": "project",
+                    "planNodeId": 3,
+                    "nReturned": 27095,
+                    "executionTimeMillisEstimate": 1175,
+                    "opens": 1,
+                    "closes": 1,
+                    "saveState": 73,
+                    "restoreState": 73,
+                    "isEOF": 1,
+                    "projections": {
+                      "12": "(convert ( s9, int32) ?: s9) ",
+                      "13": "\n    if (s11 == 0ll) \n    then null \n    else (doubleDoubleSumFinalize(s10) / s11) \n"
+                    },
+                    "inputStage": {
+                      "stage": "group",
+                      "planNodeId": 3,
+                      "nReturned": 27095,
+                      "executionTimeMillisEstimate": 1170,
+                      "opens": 1,
+                      "closes": 1,
+                      "saveState": 73,
+                      "restoreState": 73,
+                      "isEOF": 1,
+                      "groupBySlots": [
+                        8
+                      ],
+                      "expressions": {
+                        "9": "count() ",
+                        "10": "aggDoubleDoubleSum(s2) ",
+                        "11": "sum(\n    if ((typeMatch(s2, 1088) ?: true) || !(isNumber(s2))) \n    then 0ll \n    else 1ll \n) ",
+                        "initExprs": {
+                          "9": null,
+                          "10": null,
+                          "11": null
+                        }
+                      },
+                      "mergingExprs": {
+                        "5": "sum(s5) ",
+                        "6": "aggMergeDoubleDoubleSums(s6) ",
+                        "7": "sum(s7) "
+                      },
+                      "usedDisk": false,
+                      "spills": 0,
+                      "spilledBytes": 0,
+                      "spilledRecords": 0,
+                      "spilledDataStorageSize": 0,
+                      "inputStage": {
+                        "stage": "project",
+                        "planNodeId": 3,
+                        "nReturned": 1000000,
+                        "executionTimeMillisEstimate": 764,
+                        "opens": 1,
+                        "closes": 1,
+                        "saveState": 73,
+                        "restoreState": 73,
+                        "isEOF": 1,
+                        "projections": {
+                          "8": "(s1 ?: null) "
+                        },
+                        "inputStage": {
+                          "stage": "scan",
+                          "planNodeId": 1,
+                          "nReturned": 1000000,
+                          "executionTimeMillisEstimate": 747,
+                          "opens": 1,
+                          "closes": 1,
+                          "saveState": 73,
+                          "restoreState": 73,
+                          "isEOF": 1,
+                          "numReads": 1000000,
+                          "recordSlot": 3,
+                          "recordIdSlot": 4,
+                          "scanFieldNames": [
+                            "business_id",
+                            "stars"
+                          ],
+                          "scanFieldSlots": [
+                            1,
+                            2
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "nReturned": 27095,
+            "executionTimeMillisEstimate": 1194
+          },
+          {
+            "$sort": {
+              "sortKey": {
+                "review_count": -1
+              },
+              "limit": 10
+            },
+            "totalDataSizeSortedBytesEstimate": 4270,
+            "usedDisk": false,
+            "spills": 0,
+            "spilledDataStorageSize": 0,
+            "nReturned": 10,
+            "executionTimeMillisEstimate": 1194
+          }
+        ],
+        "queryShapeHash": "7A43770E804CF206CCBAA38152620774D52841EC8E3474875A2BC7B92B06F04C",
+        "serverInfo": {
+          "host": "f9a3cab5b758",
+          "port": 27017,
+          "version": "8.0.34",
+          "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+        },
+        "serverParameters": {
+          "internalQueryFacetBufferSizeBytes": 104857600,
+          "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+          "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+          "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+          "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+          "internalQueryProhibitBlockingMergeOnMongoS": 0,
+          "internalQueryMaxAddToSetBytes": 104857600,
+          "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+          "internalQueryFrameworkControl": "trySbeRestricted",
+          "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+        },
+        "command": {
+          "aggregate": "reviews",
+          "pipeline": [
+            {
+              "$group": {
+                "_id": "$business_id",
+                "review_count": {
+                  "$sum": 1
+                },
+                "avg_stars": {
+                  "$avg": "$stars"
+                }
+              }
+            },
+            {
+              "$sort": {
+                "review_count": -1
+              }
+            },
+            {
+              "$limit": 10
+            }
+          ],
+          "cursor": {},
+          "allowDiskUse": true,
+          "$db": "yelp"
+        },
+        "ok": 1.0
+      }
+    },
+    "no_index:round3:Q1_business_id": {
+      "stats": {
+        "docs_examined": 1000000,
+        "keys_examined": 0,
+        "explain_ms": 917
+      },
+      "explain": {
+        "explainVersion": "1",
+        "queryPlanner": {
+          "namespace": "yelp.reviews",
+          "parsedQuery": {
+            "business_id": {
+              "$eq": "LGi-u2zVoSciM0F_2nSg8g"
+            }
+          },
+          "indexFilterSet": false,
+          "queryHash": "56E4EBD4",
+          "planCacheShapeHash": "56E4EBD4",
+          "planCacheKey": "64A1F91C",
+          "optimizationTimeMillis": 0,
+          "maxIndexedOrSolutionsReached": false,
+          "maxIndexedAndSolutionsReached": false,
+          "maxScansToExplodeReached": false,
+          "prunedSimilarIndexes": false,
+          "winningPlan": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "COLLSCAN",
+              "filter": {
+                "business_id": {
+                  "$eq": "LGi-u2zVoSciM0F_2nSg8g"
+                }
+              },
+              "direction": "forward"
+            }
+          },
+          "rejectedPlans": []
+        },
+        "executionStats": {
+          "executionSuccess": true,
+          "nReturned": 19,
+          "executionTimeMillis": 917,
+          "totalKeysExamined": 0,
+          "totalDocsExamined": 1000000,
+          "executionStages": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "nReturned": 19,
+            "executionTimeMillisEstimate": 902,
+            "works": 1000001,
+            "advanced": 19,
+            "needTime": 999981,
+            "needYield": 0,
+            "saveState": 55,
+            "restoreState": 55,
+            "isEOF": 1,
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "COLLSCAN",
+              "filter": {
+                "business_id": {
+                  "$eq": "LGi-u2zVoSciM0F_2nSg8g"
+                }
+              },
+              "nReturned": 19,
+              "executionTimeMillisEstimate": 882,
+              "works": 1000001,
+              "advanced": 19,
+              "needTime": 999981,
+              "needYield": 0,
+              "saveState": 55,
+              "restoreState": 55,
+              "isEOF": 1,
+              "direction": "forward",
+              "docsExamined": 1000000
+            }
+          }
+        },
+        "queryShapeHash": "E85AFF87F3DA2366985B9CFFFD95F2470E42C3CC6BCC7C0D3201AF9B218E1F1E",
+        "command": {
+          "find": "reviews",
+          "filter": {
+            "business_id": "LGi-u2zVoSciM0F_2nSg8g"
+          },
+          "projection": {
+            "_id": 1
+          },
+          "$db": "yelp"
+        },
+        "serverInfo": {
+          "host": "f9a3cab5b758",
+          "port": 27017,
+          "version": "8.0.34",
+          "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+        },
+        "serverParameters": {
+          "internalQueryFacetBufferSizeBytes": 104857600,
+          "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+          "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+          "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+          "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+          "internalQueryProhibitBlockingMergeOnMongoS": 0,
+          "internalQueryMaxAddToSetBytes": 104857600,
+          "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+          "internalQueryFrameworkControl": "trySbeRestricted",
+          "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+        },
+        "ok": 1.0
+      }
+    },
+    "no_index:round3:Q2_user_id": {
+      "stats": {
+        "docs_examined": 1000000,
+        "keys_examined": 0,
+        "explain_ms": 955
+      },
+      "explain": {
+        "explainVersion": "1",
+        "queryPlanner": {
+          "namespace": "yelp.reviews",
+          "parsedQuery": {
+            "user_id": {
+              "$eq": "zfD3xhVNkGJs-AOOSslqtQ"
+            }
+          },
+          "indexFilterSet": false,
+          "queryHash": "590112A4",
+          "planCacheShapeHash": "590112A4",
+          "planCacheKey": "DC602A2C",
+          "optimizationTimeMillis": 0,
+          "maxIndexedOrSolutionsReached": false,
+          "maxIndexedAndSolutionsReached": false,
+          "maxScansToExplodeReached": false,
+          "prunedSimilarIndexes": false,
+          "winningPlan": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "COLLSCAN",
+              "filter": {
+                "user_id": {
+                  "$eq": "zfD3xhVNkGJs-AOOSslqtQ"
+                }
+              },
+              "direction": "forward"
+            }
+          },
+          "rejectedPlans": []
+        },
+        "executionStats": {
+          "executionSuccess": true,
+          "nReturned": 75,
+          "executionTimeMillis": 955,
+          "totalKeysExamined": 0,
+          "totalDocsExamined": 1000000,
+          "executionStages": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "nReturned": 75,
+            "executionTimeMillisEstimate": 935,
+            "works": 1000001,
+            "advanced": 75,
+            "needTime": 999925,
+            "needYield": 0,
+            "saveState": 56,
+            "restoreState": 56,
+            "isEOF": 1,
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "COLLSCAN",
+              "filter": {
+                "user_id": {
+                  "$eq": "zfD3xhVNkGJs-AOOSslqtQ"
+                }
+              },
+              "nReturned": 75,
+              "executionTimeMillisEstimate": 925,
+              "works": 1000001,
+              "advanced": 75,
+              "needTime": 999925,
+              "needYield": 0,
+              "saveState": 56,
+              "restoreState": 56,
+              "isEOF": 1,
+              "direction": "forward",
+              "docsExamined": 1000000
+            }
+          }
+        },
+        "queryShapeHash": "E852616D3ACB59342A9CBB9088146B2349A585D566AA3BE789EC3A7F12C3DE9C",
+        "command": {
+          "find": "reviews",
+          "filter": {
+            "user_id": "zfD3xhVNkGJs-AOOSslqtQ"
+          },
+          "projection": {
+            "_id": 1
+          },
+          "$db": "yelp"
+        },
+        "serverInfo": {
+          "host": "f9a3cab5b758",
+          "port": 27017,
+          "version": "8.0.34",
+          "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+        },
+        "serverParameters": {
+          "internalQueryFacetBufferSizeBytes": 104857600,
+          "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+          "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+          "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+          "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+          "internalQueryProhibitBlockingMergeOnMongoS": 0,
+          "internalQueryMaxAddToSetBytes": 104857600,
+          "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+          "internalQueryFrameworkControl": "trySbeRestricted",
+          "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+        },
+        "ok": 1.0
+      }
+    },
+    "no_index:round3:Q3_date_month": {
+      "stats": {
+        "docs_examined": 1000000,
+        "keys_examined": 0,
+        "explain_ms": 1013
+      },
+      "explain": {
+        "explainVersion": "1",
+        "queryPlanner": {
+          "namespace": "yelp.reviews",
+          "parsedQuery": {
+            "$and": [
+              {
+                "date": {
+                  "$lt": "2013-10-01"
+                }
+              },
+              {
+                "date": {
+                  "$gte": "2013-09-01"
+                }
+              }
+            ]
+          },
+          "indexFilterSet": false,
+          "queryHash": "3E3E3A20",
+          "planCacheShapeHash": "3E3E3A20",
+          "planCacheKey": "38660E00",
+          "optimizationTimeMillis": 0,
+          "maxIndexedOrSolutionsReached": false,
+          "maxIndexedAndSolutionsReached": false,
+          "maxScansToExplodeReached": false,
+          "prunedSimilarIndexes": false,
+          "winningPlan": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "COLLSCAN",
+              "filter": {
+                "$and": [
+                  {
+                    "date": {
+                      "$lt": "2013-10-01"
+                    }
+                  },
+                  {
+                    "date": {
+                      "$gte": "2013-09-01"
+                    }
+                  }
+                ]
+              },
+              "direction": "forward"
+            }
+          },
+          "rejectedPlans": []
+        },
+        "executionStats": {
+          "executionSuccess": true,
+          "nReturned": 5714,
+          "executionTimeMillis": 1013,
+          "totalKeysExamined": 0,
+          "totalDocsExamined": 1000000,
+          "executionStages": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "nReturned": 5714,
+            "executionTimeMillisEstimate": 1005,
+            "works": 1000001,
+            "advanced": 5714,
+            "needTime": 994286,
+            "needYield": 0,
+            "saveState": 53,
+            "restoreState": 53,
+            "isEOF": 1,
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "COLLSCAN",
+              "filter": {
+                "$and": [
+                  {
+                    "date": {
+                      "$lt": "2013-10-01"
+                    }
+                  },
+                  {
+                    "date": {
+                      "$gte": "2013-09-01"
+                    }
+                  }
+                ]
+              },
+              "nReturned": 5714,
+              "executionTimeMillisEstimate": 993,
+              "works": 1000001,
+              "advanced": 5714,
+              "needTime": 994286,
+              "needYield": 0,
+              "saveState": 53,
+              "restoreState": 53,
+              "isEOF": 1,
+              "direction": "forward",
+              "docsExamined": 1000000
+            }
+          }
+        },
+        "queryShapeHash": "22DCAEB5364824CD33F4F911CD52E4AD4D447A8E66552369769140F3F7EAE482",
+        "command": {
+          "find": "reviews",
+          "filter": {
+            "date": {
+              "$gte": "2013-09-01",
+              "$lt": "2013-10-01"
+            }
+          },
+          "projection": {
+            "_id": 1
+          },
+          "$db": "yelp"
+        },
+        "serverInfo": {
+          "host": "f9a3cab5b758",
+          "port": 27017,
+          "version": "8.0.34",
+          "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+        },
+        "serverParameters": {
+          "internalQueryFacetBufferSizeBytes": 104857600,
+          "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+          "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+          "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+          "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+          "internalQueryProhibitBlockingMergeOnMongoS": 0,
+          "internalQueryMaxAddToSetBytes": 104857600,
+          "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+          "internalQueryFrameworkControl": "trySbeRestricted",
+          "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+        },
+        "ok": 1.0
+      }
+    },
+    "no_index:round3:Q4_group_top10": {
+      "stats": {
+        "docs_examined": 1000000,
+        "keys_examined": 0,
+        "explain_ms": 1424
+      },
+      "explain": {
+        "explainVersion": "2",
+        "stages": [
+          {
+            "$cursor": {
+              "queryPlanner": {
+                "namespace": "yelp.reviews",
+                "parsedQuery": {},
+                "indexFilterSet": false,
+                "queryHash": "739402EB",
+                "planCacheShapeHash": "739402EB",
+                "planCacheKey": "4588F5D7",
+                "optimizationTimeMillis": 0,
+                "maxIndexedOrSolutionsReached": false,
+                "maxIndexedAndSolutionsReached": false,
+                "maxScansToExplodeReached": false,
+                "prunedSimilarIndexes": false,
+                "winningPlan": {
+                  "isCached": false,
+                  "queryPlan": {
+                    "stage": "GROUP",
+                    "planNodeId": 3,
+                    "inputStage": {
+                      "stage": "COLLSCAN",
+                      "planNodeId": 1,
+                      "filter": {},
+                      "direction": "forward"
+                    }
+                  },
+                  "slotBasedPlan": {
+                    "slots": "$$RESULT=s14 env: {  }",
+                    "stages": "[3] project [s14 = newObj(\"_id\", s8, \"review_count\", s12, \"avg_stars\", s13)] \n[3] project [s12 = (convert ( s9, int32) ?: s9), s13 = \n    if (s11 == 0ll) \n    then null \n    else (doubleDoubleSumFinalize(s10) / s11) \n] \n[3] group [s8] [s9 = count(), s10 = aggDoubleDoubleSum(s2), s11 = sum(\n    if ((typeMatch(s2, 1088) ?: true) || !(isNumber(s2))) \n    then 0ll \n    else 1ll \n)] spillSlots[s5, s6, s7] mergingExprs[sum(s5), aggMergeDoubleDoubleSums(s6), sum(s7)] \n[3] project [s8 = (s1 ?: null)] \n[1] scan s3 s4 none none none none none none lowPriority [s1 = business_id, s2 = stars] @\"1d2a0186-3b53-45a1-bde9-8b6112383cb9\" true false "
+                  }
+                },
+                "rejectedPlans": []
+              },
+              "executionStats": {
+                "executionSuccess": true,
+                "nReturned": 27095,
+                "executionTimeMillis": 1424,
+                "totalKeysExamined": 0,
+                "totalDocsExamined": 1000000,
+                "executionStages": {
+                  "stage": "project",
+                  "planNodeId": 3,
+                  "nReturned": 27095,
+                  "executionTimeMillisEstimate": 1399,
+                  "opens": 1,
+                  "closes": 1,
+                  "saveState": 89,
+                  "restoreState": 89,
+                  "isEOF": 1,
+                  "projections": {
+                    "14": "newObj(\"_id\", s8, \"review_count\", s12, \"avg_stars\", s13) "
+                  },
+                  "inputStage": {
+                    "stage": "project",
+                    "planNodeId": 3,
+                    "nReturned": 27095,
+                    "executionTimeMillisEstimate": 1397,
+                    "opens": 1,
+                    "closes": 1,
+                    "saveState": 89,
+                    "restoreState": 89,
+                    "isEOF": 1,
+                    "projections": {
+                      "12": "(convert ( s9, int32) ?: s9) ",
+                      "13": "\n    if (s11 == 0ll) \n    then null \n    else (doubleDoubleSumFinalize(s10) / s11) \n"
+                    },
+                    "inputStage": {
+                      "stage": "group",
+                      "planNodeId": 3,
+                      "nReturned": 27095,
+                      "executionTimeMillisEstimate": 1395,
+                      "opens": 1,
+                      "closes": 1,
+                      "saveState": 89,
+                      "restoreState": 89,
+                      "isEOF": 1,
+                      "groupBySlots": [
+                        8
+                      ],
+                      "expressions": {
+                        "9": "count() ",
+                        "10": "aggDoubleDoubleSum(s2) ",
+                        "11": "sum(\n    if ((typeMatch(s2, 1088) ?: true) || !(isNumber(s2))) \n    then 0ll \n    else 1ll \n) ",
+                        "initExprs": {
+                          "9": null,
+                          "10": null,
+                          "11": null
+                        }
+                      },
+                      "mergingExprs": {
+                        "5": "sum(s5) ",
+                        "6": "aggMergeDoubleDoubleSums(s6) ",
+                        "7": "sum(s7) "
+                      },
+                      "usedDisk": false,
+                      "spills": 0,
+                      "spilledBytes": 0,
+                      "spilledRecords": 0,
+                      "spilledDataStorageSize": 0,
+                      "inputStage": {
+                        "stage": "project",
+                        "planNodeId": 3,
+                        "nReturned": 1000000,
+                        "executionTimeMillisEstimate": 1000,
+                        "opens": 1,
+                        "closes": 1,
+                        "saveState": 89,
+                        "restoreState": 89,
+                        "isEOF": 1,
+                        "projections": {
+                          "8": "(s1 ?: null) "
+                        },
+                        "inputStage": {
+                          "stage": "scan",
+                          "planNodeId": 1,
+                          "nReturned": 1000000,
+                          "executionTimeMillisEstimate": 974,
+                          "opens": 1,
+                          "closes": 1,
+                          "saveState": 89,
+                          "restoreState": 89,
+                          "isEOF": 1,
+                          "numReads": 1000000,
+                          "recordSlot": 3,
+                          "recordIdSlot": 4,
+                          "scanFieldNames": [
+                            "business_id",
+                            "stars"
+                          ],
+                          "scanFieldSlots": [
+                            1,
+                            2
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "nReturned": 27095,
+            "executionTimeMillisEstimate": 1416
+          },
+          {
+            "$sort": {
+              "sortKey": {
+                "review_count": -1
+              },
+              "limit": 10
+            },
+            "totalDataSizeSortedBytesEstimate": 4270,
+            "usedDisk": false,
+            "spills": 0,
+            "spilledDataStorageSize": 0,
+            "nReturned": 10,
+            "executionTimeMillisEstimate": 1422
+          }
+        ],
+        "queryShapeHash": "7A43770E804CF206CCBAA38152620774D52841EC8E3474875A2BC7B92B06F04C",
+        "serverInfo": {
+          "host": "f9a3cab5b758",
+          "port": 27017,
+          "version": "8.0.34",
+          "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+        },
+        "serverParameters": {
+          "internalQueryFacetBufferSizeBytes": 104857600,
+          "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+          "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+          "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+          "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+          "internalQueryProhibitBlockingMergeOnMongoS": 0,
+          "internalQueryMaxAddToSetBytes": 104857600,
+          "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+          "internalQueryFrameworkControl": "trySbeRestricted",
+          "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+        },
+        "command": {
+          "aggregate": "reviews",
+          "pipeline": [
+            {
+              "$group": {
+                "_id": "$business_id",
+                "review_count": {
+                  "$sum": 1
+                },
+                "avg_stars": {
+                  "$avg": "$stars"
+                }
+              }
+            },
+            {
+              "$sort": {
+                "review_count": -1
+              }
+            },
+            {
+              "$limit": 10
+            }
+          ],
+          "cursor": {},
+          "allowDiskUse": true,
+          "$db": "yelp"
+        },
+        "ok": 1.0
+      }
+    },
+    "with_index:round1:Q1_business_id": {
+      "stats": {
+        "docs_examined": 19,
+        "keys_examined": 19,
+        "explain_ms": 1
+      },
+      "explain": {
+        "explainVersion": "1",
+        "queryPlanner": {
+          "namespace": "yelp.reviews",
+          "parsedQuery": {
+            "business_id": {
+              "$eq": "LGi-u2zVoSciM0F_2nSg8g"
+            }
+          },
+          "indexFilterSet": false,
+          "queryHash": "56E4EBD4",
+          "planCacheShapeHash": "56E4EBD4",
+          "planCacheKey": "C57D3BB5",
+          "optimizationTimeMillis": 0,
+          "maxIndexedOrSolutionsReached": false,
+          "maxIndexedAndSolutionsReached": false,
+          "maxScansToExplodeReached": false,
+          "prunedSimilarIndexes": false,
+          "winningPlan": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "FETCH",
+              "inputStage": {
+                "stage": "IXSCAN",
+                "keyPattern": {
+                  "business_id": 1
+                },
+                "indexName": "business_id_1",
+                "isMultiKey": false,
+                "multiKeyPaths": {
+                  "business_id": []
+                },
+                "isUnique": false,
+                "isSparse": false,
+                "isPartial": false,
+                "indexVersion": 2,
+                "direction": "forward",
+                "indexBounds": {
+                  "business_id": [
+                    "[\"LGi-u2zVoSciM0F_2nSg8g\", \"LGi-u2zVoSciM0F_2nSg8g\"]"
+                  ]
+                }
+              }
+            }
+          },
+          "rejectedPlans": []
+        },
+        "executionStats": {
+          "executionSuccess": true,
+          "nReturned": 19,
+          "executionTimeMillis": 1,
+          "totalKeysExamined": 19,
+          "totalDocsExamined": 19,
+          "executionStages": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "nReturned": 19,
+            "executionTimeMillisEstimate": 1,
+            "works": 20,
+            "advanced": 19,
+            "needTime": 0,
+            "needYield": 0,
+            "saveState": 0,
+            "restoreState": 0,
+            "isEOF": 1,
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "FETCH",
+              "nReturned": 19,
+              "executionTimeMillisEstimate": 1,
+              "works": 20,
+              "advanced": 19,
+              "needTime": 0,
+              "needYield": 0,
+              "saveState": 0,
+              "restoreState": 0,
+              "isEOF": 1,
+              "docsExamined": 19,
+              "alreadyHasObj": 0,
+              "inputStage": {
+                "stage": "IXSCAN",
+                "nReturned": 19,
+                "executionTimeMillisEstimate": 0,
+                "works": 20,
+                "advanced": 19,
+                "needTime": 0,
+                "needYield": 0,
+                "saveState": 0,
+                "restoreState": 0,
+                "isEOF": 1,
+                "keyPattern": {
+                  "business_id": 1
+                },
+                "indexName": "business_id_1",
+                "isMultiKey": false,
+                "multiKeyPaths": {
+                  "business_id": []
+                },
+                "isUnique": false,
+                "isSparse": false,
+                "isPartial": false,
+                "indexVersion": 2,
+                "direction": "forward",
+                "indexBounds": {
+                  "business_id": [
+                    "[\"LGi-u2zVoSciM0F_2nSg8g\", \"LGi-u2zVoSciM0F_2nSg8g\"]"
+                  ]
+                },
+                "keysExamined": 19,
+                "seeks": 1,
+                "dupsTested": 0,
+                "dupsDropped": 0
+              }
+            }
+          }
+        },
+        "queryShapeHash": "E85AFF87F3DA2366985B9CFFFD95F2470E42C3CC6BCC7C0D3201AF9B218E1F1E",
+        "command": {
+          "find": "reviews",
+          "filter": {
+            "business_id": "LGi-u2zVoSciM0F_2nSg8g"
+          },
+          "projection": {
+            "_id": 1
+          },
+          "$db": "yelp"
+        },
+        "serverInfo": {
+          "host": "f9a3cab5b758",
+          "port": 27017,
+          "version": "8.0.34",
+          "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+        },
+        "serverParameters": {
+          "internalQueryFacetBufferSizeBytes": 104857600,
+          "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+          "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+          "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+          "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+          "internalQueryProhibitBlockingMergeOnMongoS": 0,
+          "internalQueryMaxAddToSetBytes": 104857600,
+          "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+          "internalQueryFrameworkControl": "trySbeRestricted",
+          "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+        },
+        "ok": 1.0
+      }
+    },
+    "with_index:round1:Q2_user_id": {
+      "stats": {
+        "docs_examined": 75,
+        "keys_examined": 75,
+        "explain_ms": 2
+      },
+      "explain": {
+        "explainVersion": "1",
+        "queryPlanner": {
+          "namespace": "yelp.reviews",
+          "parsedQuery": {
+            "user_id": {
+              "$eq": "zfD3xhVNkGJs-AOOSslqtQ"
+            }
+          },
+          "indexFilterSet": false,
+          "queryHash": "590112A4",
+          "planCacheShapeHash": "590112A4",
+          "planCacheKey": "E91959B5",
+          "optimizationTimeMillis": 0,
+          "maxIndexedOrSolutionsReached": false,
+          "maxIndexedAndSolutionsReached": false,
+          "maxScansToExplodeReached": false,
+          "prunedSimilarIndexes": false,
+          "winningPlan": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "FETCH",
+              "inputStage": {
+                "stage": "IXSCAN",
+                "keyPattern": {
+                  "user_id": 1
+                },
+                "indexName": "user_id_1",
+                "isMultiKey": false,
+                "multiKeyPaths": {
+                  "user_id": []
+                },
+                "isUnique": false,
+                "isSparse": false,
+                "isPartial": false,
+                "indexVersion": 2,
+                "direction": "forward",
+                "indexBounds": {
+                  "user_id": [
+                    "[\"zfD3xhVNkGJs-AOOSslqtQ\", \"zfD3xhVNkGJs-AOOSslqtQ\"]"
+                  ]
+                }
+              }
+            }
+          },
+          "rejectedPlans": []
+        },
+        "executionStats": {
+          "executionSuccess": true,
+          "nReturned": 75,
+          "executionTimeMillis": 2,
+          "totalKeysExamined": 75,
+          "totalDocsExamined": 75,
+          "executionStages": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "nReturned": 75,
+            "executionTimeMillisEstimate": 0,
+            "works": 76,
+            "advanced": 75,
+            "needTime": 0,
+            "needYield": 0,
+            "saveState": 0,
+            "restoreState": 0,
+            "isEOF": 1,
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "FETCH",
+              "nReturned": 75,
+              "executionTimeMillisEstimate": 0,
+              "works": 76,
+              "advanced": 75,
+              "needTime": 0,
+              "needYield": 0,
+              "saveState": 0,
+              "restoreState": 0,
+              "isEOF": 1,
+              "docsExamined": 75,
+              "alreadyHasObj": 0,
+              "inputStage": {
+                "stage": "IXSCAN",
+                "nReturned": 75,
+                "executionTimeMillisEstimate": 0,
+                "works": 76,
+                "advanced": 75,
+                "needTime": 0,
+                "needYield": 0,
+                "saveState": 0,
+                "restoreState": 0,
+                "isEOF": 1,
+                "keyPattern": {
+                  "user_id": 1
+                },
+                "indexName": "user_id_1",
+                "isMultiKey": false,
+                "multiKeyPaths": {
+                  "user_id": []
+                },
+                "isUnique": false,
+                "isSparse": false,
+                "isPartial": false,
+                "indexVersion": 2,
+                "direction": "forward",
+                "indexBounds": {
+                  "user_id": [
+                    "[\"zfD3xhVNkGJs-AOOSslqtQ\", \"zfD3xhVNkGJs-AOOSslqtQ\"]"
+                  ]
+                },
+                "keysExamined": 75,
+                "seeks": 1,
+                "dupsTested": 0,
+                "dupsDropped": 0
+              }
+            }
+          }
+        },
+        "queryShapeHash": "E852616D3ACB59342A9CBB9088146B2349A585D566AA3BE789EC3A7F12C3DE9C",
+        "command": {
+          "find": "reviews",
+          "filter": {
+            "user_id": "zfD3xhVNkGJs-AOOSslqtQ"
+          },
+          "projection": {
+            "_id": 1
+          },
+          "$db": "yelp"
+        },
+        "serverInfo": {
+          "host": "f9a3cab5b758",
+          "port": 27017,
+          "version": "8.0.34",
+          "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+        },
+        "serverParameters": {
+          "internalQueryFacetBufferSizeBytes": 104857600,
+          "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+          "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+          "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+          "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+          "internalQueryProhibitBlockingMergeOnMongoS": 0,
+          "internalQueryMaxAddToSetBytes": 104857600,
+          "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+          "internalQueryFrameworkControl": "trySbeRestricted",
+          "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+        },
+        "ok": 1.0
+      }
+    },
+    "with_index:round1:Q3_date_month": {
+      "stats": {
+        "docs_examined": 5714,
+        "keys_examined": 5714,
+        "explain_ms": 252
+      },
+      "explain": {
+        "explainVersion": "1",
+        "queryPlanner": {
+          "namespace": "yelp.reviews",
+          "parsedQuery": {
+            "$and": [
+              {
+                "date": {
+                  "$lt": "2013-10-01"
+                }
+              },
+              {
+                "date": {
+                  "$gte": "2013-09-01"
+                }
+              }
+            ]
+          },
+          "indexFilterSet": false,
+          "queryHash": "3E3E3A20",
+          "planCacheShapeHash": "3E3E3A20",
+          "planCacheKey": "F35341E2",
+          "optimizationTimeMillis": 0,
+          "maxIndexedOrSolutionsReached": false,
+          "maxIndexedAndSolutionsReached": false,
+          "maxScansToExplodeReached": false,
+          "prunedSimilarIndexes": false,
+          "winningPlan": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "FETCH",
+              "inputStage": {
+                "stage": "IXSCAN",
+                "keyPattern": {
+                  "date": 1
+                },
+                "indexName": "date_1",
+                "isMultiKey": false,
+                "multiKeyPaths": {
+                  "date": []
+                },
+                "isUnique": false,
+                "isSparse": false,
+                "isPartial": false,
+                "indexVersion": 2,
+                "direction": "forward",
+                "indexBounds": {
+                  "date": [
+                    "[\"2013-09-01\", \"2013-10-01\")"
+                  ]
+                }
+              }
+            }
+          },
+          "rejectedPlans": []
+        },
+        "executionStats": {
+          "executionSuccess": true,
+          "nReturned": 5714,
+          "executionTimeMillis": 252,
+          "totalKeysExamined": 5714,
+          "totalDocsExamined": 5714,
+          "executionStages": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "nReturned": 5714,
+            "executionTimeMillisEstimate": 249,
+            "works": 5715,
+            "advanced": 5714,
+            "needTime": 0,
+            "needYield": 0,
+            "saveState": 12,
+            "restoreState": 12,
+            "isEOF": 1,
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "FETCH",
+              "nReturned": 5714,
+              "executionTimeMillisEstimate": 249,
+              "works": 5715,
+              "advanced": 5714,
+              "needTime": 0,
+              "needYield": 0,
+              "saveState": 12,
+              "restoreState": 12,
+              "isEOF": 1,
+              "docsExamined": 5714,
+              "alreadyHasObj": 0,
+              "inputStage": {
+                "stage": "IXSCAN",
+                "nReturned": 5714,
+                "executionTimeMillisEstimate": 10,
+                "works": 5715,
+                "advanced": 5714,
+                "needTime": 0,
+                "needYield": 0,
+                "saveState": 12,
+                "restoreState": 12,
+                "isEOF": 1,
+                "keyPattern": {
+                  "date": 1
+                },
+                "indexName": "date_1",
+                "isMultiKey": false,
+                "multiKeyPaths": {
+                  "date": []
+                },
+                "isUnique": false,
+                "isSparse": false,
+                "isPartial": false,
+                "indexVersion": 2,
+                "direction": "forward",
+                "indexBounds": {
+                  "date": [
+                    "[\"2013-09-01\", \"2013-10-01\")"
+                  ]
+                },
+                "keysExamined": 5714,
+                "seeks": 1,
+                "dupsTested": 0,
+                "dupsDropped": 0
+              }
+            }
+          }
+        },
+        "queryShapeHash": "22DCAEB5364824CD33F4F911CD52E4AD4D447A8E66552369769140F3F7EAE482",
+        "command": {
+          "find": "reviews",
+          "filter": {
+            "date": {
+              "$gte": "2013-09-01",
+              "$lt": "2013-10-01"
+            }
+          },
+          "projection": {
+            "_id": 1
+          },
+          "$db": "yelp"
+        },
+        "serverInfo": {
+          "host": "f9a3cab5b758",
+          "port": 27017,
+          "version": "8.0.34",
+          "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+        },
+        "serverParameters": {
+          "internalQueryFacetBufferSizeBytes": 104857600,
+          "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+          "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+          "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+          "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+          "internalQueryProhibitBlockingMergeOnMongoS": 0,
+          "internalQueryMaxAddToSetBytes": 104857600,
+          "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+          "internalQueryFrameworkControl": "trySbeRestricted",
+          "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+        },
+        "ok": 1.0
+      }
+    },
+    "with_index:round1:Q4_group_top10": {
+      "stats": {
+        "docs_examined": 1000000,
+        "keys_examined": 0,
+        "explain_ms": 1332
+      },
+      "explain": {
+        "explainVersion": "2",
+        "stages": [
+          {
+            "$cursor": {
+              "queryPlanner": {
+                "namespace": "yelp.reviews",
+                "parsedQuery": {},
+                "indexFilterSet": false,
+                "queryHash": "739402EB",
+                "planCacheShapeHash": "739402EB",
+                "planCacheKey": "4588F5D7",
+                "optimizationTimeMillis": 0,
+                "maxIndexedOrSolutionsReached": false,
+                "maxIndexedAndSolutionsReached": false,
+                "maxScansToExplodeReached": false,
+                "prunedSimilarIndexes": false,
+                "winningPlan": {
+                  "isCached": false,
+                  "queryPlan": {
+                    "stage": "GROUP",
+                    "planNodeId": 3,
+                    "inputStage": {
+                      "stage": "COLLSCAN",
+                      "planNodeId": 1,
+                      "filter": {},
+                      "direction": "forward"
+                    }
+                  },
+                  "slotBasedPlan": {
+                    "slots": "$$RESULT=s14 env: {  }",
+                    "stages": "[3] project [s14 = newObj(\"_id\", s8, \"review_count\", s12, \"avg_stars\", s13)] \n[3] project [s12 = (convert ( s9, int32) ?: s9), s13 = \n    if (s11 == 0ll) \n    then null \n    else (doubleDoubleSumFinalize(s10) / s11) \n] \n[3] group [s8] [s9 = count(), s10 = aggDoubleDoubleSum(s2), s11 = sum(\n    if ((typeMatch(s2, 1088) ?: true) || !(isNumber(s2))) \n    then 0ll \n    else 1ll \n)] spillSlots[s5, s6, s7] mergingExprs[sum(s5), aggMergeDoubleDoubleSums(s6), sum(s7)] \n[3] project [s8 = (s1 ?: null)] \n[1] scan s3 s4 none none none none none none lowPriority [s1 = business_id, s2 = stars] @\"1d2a0186-3b53-45a1-bde9-8b6112383cb9\" true false "
+                  }
+                },
+                "rejectedPlans": []
+              },
+              "executionStats": {
+                "executionSuccess": true,
+                "nReturned": 27095,
+                "executionTimeMillis": 1332,
+                "totalKeysExamined": 0,
+                "totalDocsExamined": 1000000,
+                "executionStages": {
+                  "stage": "project",
+                  "planNodeId": 3,
+                  "nReturned": 27095,
+                  "executionTimeMillisEstimate": 1310,
+                  "opens": 1,
+                  "closes": 1,
+                  "saveState": 80,
+                  "restoreState": 80,
+                  "isEOF": 1,
+                  "projections": {
+                    "14": "newObj(\"_id\", s8, \"review_count\", s12, \"avg_stars\", s13) "
+                  },
+                  "inputStage": {
+                    "stage": "project",
+                    "planNodeId": 3,
+                    "nReturned": 27095,
+                    "executionTimeMillisEstimate": 1305,
+                    "opens": 1,
+                    "closes": 1,
+                    "saveState": 80,
+                    "restoreState": 80,
+                    "isEOF": 1,
+                    "projections": {
+                      "12": "(convert ( s9, int32) ?: s9) ",
+                      "13": "\n    if (s11 == 0ll) \n    then null \n    else (doubleDoubleSumFinalize(s10) / s11) \n"
+                    },
+                    "inputStage": {
+                      "stage": "group",
+                      "planNodeId": 3,
+                      "nReturned": 27095,
+                      "executionTimeMillisEstimate": 1304,
+                      "opens": 1,
+                      "closes": 1,
+                      "saveState": 80,
+                      "restoreState": 80,
+                      "isEOF": 1,
+                      "groupBySlots": [
+                        8
+                      ],
+                      "expressions": {
+                        "9": "count() ",
+                        "10": "aggDoubleDoubleSum(s2) ",
+                        "11": "sum(\n    if ((typeMatch(s2, 1088) ?: true) || !(isNumber(s2))) \n    then 0ll \n    else 1ll \n) ",
+                        "initExprs": {
+                          "9": null,
+                          "10": null,
+                          "11": null
+                        }
+                      },
+                      "mergingExprs": {
+                        "5": "sum(s5) ",
+                        "6": "aggMergeDoubleDoubleSums(s6) ",
+                        "7": "sum(s7) "
+                      },
+                      "usedDisk": false,
+                      "spills": 0,
+                      "spilledBytes": 0,
+                      "spilledRecords": 0,
+                      "spilledDataStorageSize": 0,
+                      "inputStage": {
+                        "stage": "project",
+                        "planNodeId": 3,
+                        "nReturned": 1000000,
+                        "executionTimeMillisEstimate": 947,
+                        "opens": 1,
+                        "closes": 1,
+                        "saveState": 80,
+                        "restoreState": 80,
+                        "isEOF": 1,
+                        "projections": {
+                          "8": "(s1 ?: null) "
+                        },
+                        "inputStage": {
+                          "stage": "scan",
+                          "planNodeId": 1,
+                          "nReturned": 1000000,
+                          "executionTimeMillisEstimate": 937,
+                          "opens": 1,
+                          "closes": 1,
+                          "saveState": 80,
+                          "restoreState": 80,
+                          "isEOF": 1,
+                          "numReads": 1000000,
+                          "recordSlot": 3,
+                          "recordIdSlot": 4,
+                          "scanFieldNames": [
+                            "business_id",
+                            "stars"
+                          ],
+                          "scanFieldSlots": [
+                            1,
+                            2
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "nReturned": 27095,
+            "executionTimeMillisEstimate": 1330
+          },
+          {
+            "$sort": {
+              "sortKey": {
+                "review_count": -1
+              },
+              "limit": 10
+            },
+            "totalDataSizeSortedBytesEstimate": 4270,
+            "usedDisk": false,
+            "spills": 0,
+            "spilledDataStorageSize": 0,
+            "nReturned": 10,
+            "executionTimeMillisEstimate": 1330
+          }
+        ],
+        "queryShapeHash": "7A43770E804CF206CCBAA38152620774D52841EC8E3474875A2BC7B92B06F04C",
+        "serverInfo": {
+          "host": "f9a3cab5b758",
+          "port": 27017,
+          "version": "8.0.34",
+          "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+        },
+        "serverParameters": {
+          "internalQueryFacetBufferSizeBytes": 104857600,
+          "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+          "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+          "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+          "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+          "internalQueryProhibitBlockingMergeOnMongoS": 0,
+          "internalQueryMaxAddToSetBytes": 104857600,
+          "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+          "internalQueryFrameworkControl": "trySbeRestricted",
+          "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+        },
+        "command": {
+          "aggregate": "reviews",
+          "pipeline": [
+            {
+              "$group": {
+                "_id": "$business_id",
+                "review_count": {
+                  "$sum": 1
+                },
+                "avg_stars": {
+                  "$avg": "$stars"
+                }
+              }
+            },
+            {
+              "$sort": {
+                "review_count": -1
+              }
+            },
+            {
+              "$limit": 10
+            }
+          ],
+          "cursor": {},
+          "allowDiskUse": true,
+          "$db": "yelp"
+        },
+        "ok": 1.0
+      }
+    },
+    "with_index:round2:Q1_business_id": {
+      "stats": {
+        "docs_examined": 19,
+        "keys_examined": 19,
+        "explain_ms": 1
+      },
+      "explain": {
+        "explainVersion": "1",
+        "queryPlanner": {
+          "namespace": "yelp.reviews",
+          "parsedQuery": {
+            "business_id": {
+              "$eq": "LGi-u2zVoSciM0F_2nSg8g"
+            }
+          },
+          "indexFilterSet": false,
+          "queryHash": "56E4EBD4",
+          "planCacheShapeHash": "56E4EBD4",
+          "planCacheKey": "C57D3BB5",
+          "optimizationTimeMillis": 0,
+          "maxIndexedOrSolutionsReached": false,
+          "maxIndexedAndSolutionsReached": false,
+          "maxScansToExplodeReached": false,
+          "prunedSimilarIndexes": false,
+          "winningPlan": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "FETCH",
+              "inputStage": {
+                "stage": "IXSCAN",
+                "keyPattern": {
+                  "business_id": 1
+                },
+                "indexName": "business_id_1",
+                "isMultiKey": false,
+                "multiKeyPaths": {
+                  "business_id": []
+                },
+                "isUnique": false,
+                "isSparse": false,
+                "isPartial": false,
+                "indexVersion": 2,
+                "direction": "forward",
+                "indexBounds": {
+                  "business_id": [
+                    "[\"LGi-u2zVoSciM0F_2nSg8g\", \"LGi-u2zVoSciM0F_2nSg8g\"]"
+                  ]
+                }
+              }
+            }
+          },
+          "rejectedPlans": []
+        },
+        "executionStats": {
+          "executionSuccess": true,
+          "nReturned": 19,
+          "executionTimeMillis": 1,
+          "totalKeysExamined": 19,
+          "totalDocsExamined": 19,
+          "executionStages": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "nReturned": 19,
+            "executionTimeMillisEstimate": 0,
+            "works": 20,
+            "advanced": 19,
+            "needTime": 0,
+            "needYield": 0,
+            "saveState": 0,
+            "restoreState": 0,
+            "isEOF": 1,
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "FETCH",
+              "nReturned": 19,
+              "executionTimeMillisEstimate": 0,
+              "works": 20,
+              "advanced": 19,
+              "needTime": 0,
+              "needYield": 0,
+              "saveState": 0,
+              "restoreState": 0,
+              "isEOF": 1,
+              "docsExamined": 19,
+              "alreadyHasObj": 0,
+              "inputStage": {
+                "stage": "IXSCAN",
+                "nReturned": 19,
+                "executionTimeMillisEstimate": 0,
+                "works": 20,
+                "advanced": 19,
+                "needTime": 0,
+                "needYield": 0,
+                "saveState": 0,
+                "restoreState": 0,
+                "isEOF": 1,
+                "keyPattern": {
+                  "business_id": 1
+                },
+                "indexName": "business_id_1",
+                "isMultiKey": false,
+                "multiKeyPaths": {
+                  "business_id": []
+                },
+                "isUnique": false,
+                "isSparse": false,
+                "isPartial": false,
+                "indexVersion": 2,
+                "direction": "forward",
+                "indexBounds": {
+                  "business_id": [
+                    "[\"LGi-u2zVoSciM0F_2nSg8g\", \"LGi-u2zVoSciM0F_2nSg8g\"]"
+                  ]
+                },
+                "keysExamined": 19,
+                "seeks": 1,
+                "dupsTested": 0,
+                "dupsDropped": 0
+              }
+            }
+          }
+        },
+        "queryShapeHash": "E85AFF87F3DA2366985B9CFFFD95F2470E42C3CC6BCC7C0D3201AF9B218E1F1E",
+        "command": {
+          "find": "reviews",
+          "filter": {
+            "business_id": "LGi-u2zVoSciM0F_2nSg8g"
+          },
+          "projection": {
+            "_id": 1
+          },
+          "$db": "yelp"
+        },
+        "serverInfo": {
+          "host": "f9a3cab5b758",
+          "port": 27017,
+          "version": "8.0.34",
+          "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+        },
+        "serverParameters": {
+          "internalQueryFacetBufferSizeBytes": 104857600,
+          "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+          "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+          "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+          "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+          "internalQueryProhibitBlockingMergeOnMongoS": 0,
+          "internalQueryMaxAddToSetBytes": 104857600,
+          "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+          "internalQueryFrameworkControl": "trySbeRestricted",
+          "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+        },
+        "ok": 1.0
+      }
+    },
+    "with_index:round2:Q2_user_id": {
+      "stats": {
+        "docs_examined": 75,
+        "keys_examined": 75,
+        "explain_ms": 2
+      },
+      "explain": {
+        "explainVersion": "1",
+        "queryPlanner": {
+          "namespace": "yelp.reviews",
+          "parsedQuery": {
+            "user_id": {
+              "$eq": "zfD3xhVNkGJs-AOOSslqtQ"
+            }
+          },
+          "indexFilterSet": false,
+          "queryHash": "590112A4",
+          "planCacheShapeHash": "590112A4",
+          "planCacheKey": "E91959B5",
+          "optimizationTimeMillis": 0,
+          "maxIndexedOrSolutionsReached": false,
+          "maxIndexedAndSolutionsReached": false,
+          "maxScansToExplodeReached": false,
+          "prunedSimilarIndexes": false,
+          "winningPlan": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "FETCH",
+              "inputStage": {
+                "stage": "IXSCAN",
+                "keyPattern": {
+                  "user_id": 1
+                },
+                "indexName": "user_id_1",
+                "isMultiKey": false,
+                "multiKeyPaths": {
+                  "user_id": []
+                },
+                "isUnique": false,
+                "isSparse": false,
+                "isPartial": false,
+                "indexVersion": 2,
+                "direction": "forward",
+                "indexBounds": {
+                  "user_id": [
+                    "[\"zfD3xhVNkGJs-AOOSslqtQ\", \"zfD3xhVNkGJs-AOOSslqtQ\"]"
+                  ]
+                }
+              }
+            }
+          },
+          "rejectedPlans": []
+        },
+        "executionStats": {
+          "executionSuccess": true,
+          "nReturned": 75,
+          "executionTimeMillis": 2,
+          "totalKeysExamined": 75,
+          "totalDocsExamined": 75,
+          "executionStages": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "nReturned": 75,
+            "executionTimeMillisEstimate": 2,
+            "works": 76,
+            "advanced": 75,
+            "needTime": 0,
+            "needYield": 0,
+            "saveState": 0,
+            "restoreState": 0,
+            "isEOF": 1,
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "FETCH",
+              "nReturned": 75,
+              "executionTimeMillisEstimate": 2,
+              "works": 76,
+              "advanced": 75,
+              "needTime": 0,
+              "needYield": 0,
+              "saveState": 0,
+              "restoreState": 0,
+              "isEOF": 1,
+              "docsExamined": 75,
+              "alreadyHasObj": 0,
+              "inputStage": {
+                "stage": "IXSCAN",
+                "nReturned": 75,
+                "executionTimeMillisEstimate": 0,
+                "works": 76,
+                "advanced": 75,
+                "needTime": 0,
+                "needYield": 0,
+                "saveState": 0,
+                "restoreState": 0,
+                "isEOF": 1,
+                "keyPattern": {
+                  "user_id": 1
+                },
+                "indexName": "user_id_1",
+                "isMultiKey": false,
+                "multiKeyPaths": {
+                  "user_id": []
+                },
+                "isUnique": false,
+                "isSparse": false,
+                "isPartial": false,
+                "indexVersion": 2,
+                "direction": "forward",
+                "indexBounds": {
+                  "user_id": [
+                    "[\"zfD3xhVNkGJs-AOOSslqtQ\", \"zfD3xhVNkGJs-AOOSslqtQ\"]"
+                  ]
+                },
+                "keysExamined": 75,
+                "seeks": 1,
+                "dupsTested": 0,
+                "dupsDropped": 0
+              }
+            }
+          }
+        },
+        "queryShapeHash": "E852616D3ACB59342A9CBB9088146B2349A585D566AA3BE789EC3A7F12C3DE9C",
+        "command": {
+          "find": "reviews",
+          "filter": {
+            "user_id": "zfD3xhVNkGJs-AOOSslqtQ"
+          },
+          "projection": {
+            "_id": 1
+          },
+          "$db": "yelp"
+        },
+        "serverInfo": {
+          "host": "f9a3cab5b758",
+          "port": 27017,
+          "version": "8.0.34",
+          "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+        },
+        "serverParameters": {
+          "internalQueryFacetBufferSizeBytes": 104857600,
+          "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+          "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+          "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+          "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+          "internalQueryProhibitBlockingMergeOnMongoS": 0,
+          "internalQueryMaxAddToSetBytes": 104857600,
+          "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+          "internalQueryFrameworkControl": "trySbeRestricted",
+          "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+        },
+        "ok": 1.0
+      }
+    },
+    "with_index:round2:Q3_date_month": {
+      "stats": {
+        "docs_examined": 5714,
+        "keys_examined": 5714,
+        "explain_ms": 289
+      },
+      "explain": {
+        "explainVersion": "1",
+        "queryPlanner": {
+          "namespace": "yelp.reviews",
+          "parsedQuery": {
+            "$and": [
+              {
+                "date": {
+                  "$lt": "2013-10-01"
+                }
+              },
+              {
+                "date": {
+                  "$gte": "2013-09-01"
+                }
+              }
+            ]
+          },
+          "indexFilterSet": false,
+          "queryHash": "3E3E3A20",
+          "planCacheShapeHash": "3E3E3A20",
+          "planCacheKey": "F35341E2",
+          "optimizationTimeMillis": 0,
+          "maxIndexedOrSolutionsReached": false,
+          "maxIndexedAndSolutionsReached": false,
+          "maxScansToExplodeReached": false,
+          "prunedSimilarIndexes": false,
+          "winningPlan": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "FETCH",
+              "inputStage": {
+                "stage": "IXSCAN",
+                "keyPattern": {
+                  "date": 1
+                },
+                "indexName": "date_1",
+                "isMultiKey": false,
+                "multiKeyPaths": {
+                  "date": []
+                },
+                "isUnique": false,
+                "isSparse": false,
+                "isPartial": false,
+                "indexVersion": 2,
+                "direction": "forward",
+                "indexBounds": {
+                  "date": [
+                    "[\"2013-09-01\", \"2013-10-01\")"
+                  ]
+                }
+              }
+            }
+          },
+          "rejectedPlans": []
+        },
+        "executionStats": {
+          "executionSuccess": true,
+          "nReturned": 5714,
+          "executionTimeMillis": 289,
+          "totalKeysExamined": 5714,
+          "totalDocsExamined": 5714,
+          "executionStages": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "nReturned": 5714,
+            "executionTimeMillisEstimate": 281,
+            "works": 5715,
+            "advanced": 5714,
+            "needTime": 0,
+            "needYield": 0,
+            "saveState": 14,
+            "restoreState": 14,
+            "isEOF": 1,
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "FETCH",
+              "nReturned": 5714,
+              "executionTimeMillisEstimate": 271,
+              "works": 5715,
+              "advanced": 5714,
+              "needTime": 0,
+              "needYield": 0,
+              "saveState": 14,
+              "restoreState": 14,
+              "isEOF": 1,
+              "docsExamined": 5714,
+              "alreadyHasObj": 0,
+              "inputStage": {
+                "stage": "IXSCAN",
+                "nReturned": 5714,
+                "executionTimeMillisEstimate": 1,
+                "works": 5715,
+                "advanced": 5714,
+                "needTime": 0,
+                "needYield": 0,
+                "saveState": 14,
+                "restoreState": 14,
+                "isEOF": 1,
+                "keyPattern": {
+                  "date": 1
+                },
+                "indexName": "date_1",
+                "isMultiKey": false,
+                "multiKeyPaths": {
+                  "date": []
+                },
+                "isUnique": false,
+                "isSparse": false,
+                "isPartial": false,
+                "indexVersion": 2,
+                "direction": "forward",
+                "indexBounds": {
+                  "date": [
+                    "[\"2013-09-01\", \"2013-10-01\")"
+                  ]
+                },
+                "keysExamined": 5714,
+                "seeks": 1,
+                "dupsTested": 0,
+                "dupsDropped": 0
+              }
+            }
+          }
+        },
+        "queryShapeHash": "22DCAEB5364824CD33F4F911CD52E4AD4D447A8E66552369769140F3F7EAE482",
+        "command": {
+          "find": "reviews",
+          "filter": {
+            "date": {
+              "$gte": "2013-09-01",
+              "$lt": "2013-10-01"
+            }
+          },
+          "projection": {
+            "_id": 1
+          },
+          "$db": "yelp"
+        },
+        "serverInfo": {
+          "host": "f9a3cab5b758",
+          "port": 27017,
+          "version": "8.0.34",
+          "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+        },
+        "serverParameters": {
+          "internalQueryFacetBufferSizeBytes": 104857600,
+          "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+          "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+          "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+          "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+          "internalQueryProhibitBlockingMergeOnMongoS": 0,
+          "internalQueryMaxAddToSetBytes": 104857600,
+          "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+          "internalQueryFrameworkControl": "trySbeRestricted",
+          "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+        },
+        "ok": 1.0
+      }
+    },
+    "with_index:round2:Q4_group_top10": {
+      "stats": {
+        "docs_examined": 1000000,
+        "keys_examined": 0,
+        "explain_ms": 1308
+      },
+      "explain": {
+        "explainVersion": "2",
+        "stages": [
+          {
+            "$cursor": {
+              "queryPlanner": {
+                "namespace": "yelp.reviews",
+                "parsedQuery": {},
+                "indexFilterSet": false,
+                "queryHash": "739402EB",
+                "planCacheShapeHash": "739402EB",
+                "planCacheKey": "4588F5D7",
+                "optimizationTimeMillis": 0,
+                "maxIndexedOrSolutionsReached": false,
+                "maxIndexedAndSolutionsReached": false,
+                "maxScansToExplodeReached": false,
+                "prunedSimilarIndexes": false,
+                "winningPlan": {
+                  "isCached": false,
+                  "queryPlan": {
+                    "stage": "GROUP",
+                    "planNodeId": 3,
+                    "inputStage": {
+                      "stage": "COLLSCAN",
+                      "planNodeId": 1,
+                      "filter": {},
+                      "direction": "forward"
+                    }
+                  },
+                  "slotBasedPlan": {
+                    "slots": "$$RESULT=s14 env: {  }",
+                    "stages": "[3] project [s14 = newObj(\"_id\", s8, \"review_count\", s12, \"avg_stars\", s13)] \n[3] project [s12 = (convert ( s9, int32) ?: s9), s13 = \n    if (s11 == 0ll) \n    then null \n    else (doubleDoubleSumFinalize(s10) / s11) \n] \n[3] group [s8] [s9 = count(), s10 = aggDoubleDoubleSum(s2), s11 = sum(\n    if ((typeMatch(s2, 1088) ?: true) || !(isNumber(s2))) \n    then 0ll \n    else 1ll \n)] spillSlots[s5, s6, s7] mergingExprs[sum(s5), aggMergeDoubleDoubleSums(s6), sum(s7)] \n[3] project [s8 = (s1 ?: null)] \n[1] scan s3 s4 none none none none none none lowPriority [s1 = business_id, s2 = stars] @\"1d2a0186-3b53-45a1-bde9-8b6112383cb9\" true false "
+                  }
+                },
+                "rejectedPlans": []
+              },
+              "executionStats": {
+                "executionSuccess": true,
+                "nReturned": 27095,
+                "executionTimeMillis": 1308,
+                "totalKeysExamined": 0,
+                "totalDocsExamined": 1000000,
+                "executionStages": {
+                  "stage": "project",
+                  "planNodeId": 3,
+                  "nReturned": 27095,
+                  "executionTimeMillisEstimate": 1284,
+                  "opens": 1,
+                  "closes": 1,
+                  "saveState": 78,
+                  "restoreState": 78,
+                  "isEOF": 1,
+                  "projections": {
+                    "14": "newObj(\"_id\", s8, \"review_count\", s12, \"avg_stars\", s13) "
+                  },
+                  "inputStage": {
+                    "stage": "project",
+                    "planNodeId": 3,
+                    "nReturned": 27095,
+                    "executionTimeMillisEstimate": 1276,
+                    "opens": 1,
+                    "closes": 1,
+                    "saveState": 78,
+                    "restoreState": 78,
+                    "isEOF": 1,
+                    "projections": {
+                      "12": "(convert ( s9, int32) ?: s9) ",
+                      "13": "\n    if (s11 == 0ll) \n    then null \n    else (doubleDoubleSumFinalize(s10) / s11) \n"
+                    },
+                    "inputStage": {
+                      "stage": "group",
+                      "planNodeId": 3,
+                      "nReturned": 27095,
+                      "executionTimeMillisEstimate": 1276,
+                      "opens": 1,
+                      "closes": 1,
+                      "saveState": 78,
+                      "restoreState": 78,
+                      "isEOF": 1,
+                      "groupBySlots": [
+                        8
+                      ],
+                      "expressions": {
+                        "9": "count() ",
+                        "10": "aggDoubleDoubleSum(s2) ",
+                        "11": "sum(\n    if ((typeMatch(s2, 1088) ?: true) || !(isNumber(s2))) \n    then 0ll \n    else 1ll \n) ",
+                        "initExprs": {
+                          "9": null,
+                          "10": null,
+                          "11": null
+                        }
+                      },
+                      "mergingExprs": {
+                        "5": "sum(s5) ",
+                        "6": "aggMergeDoubleDoubleSums(s6) ",
+                        "7": "sum(s7) "
+                      },
+                      "usedDisk": false,
+                      "spills": 0,
+                      "spilledBytes": 0,
+                      "spilledRecords": 0,
+                      "spilledDataStorageSize": 0,
+                      "inputStage": {
+                        "stage": "project",
+                        "planNodeId": 3,
+                        "nReturned": 1000000,
+                        "executionTimeMillisEstimate": 816,
+                        "opens": 1,
+                        "closes": 1,
+                        "saveState": 78,
+                        "restoreState": 78,
+                        "isEOF": 1,
+                        "projections": {
+                          "8": "(s1 ?: null) "
+                        },
+                        "inputStage": {
+                          "stage": "scan",
+                          "planNodeId": 1,
+                          "nReturned": 1000000,
+                          "executionTimeMillisEstimate": 772,
+                          "opens": 1,
+                          "closes": 1,
+                          "saveState": 78,
+                          "restoreState": 78,
+                          "isEOF": 1,
+                          "numReads": 1000000,
+                          "recordSlot": 3,
+                          "recordIdSlot": 4,
+                          "scanFieldNames": [
+                            "business_id",
+                            "stars"
+                          ],
+                          "scanFieldSlots": [
+                            1,
+                            2
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "nReturned": 27095,
+            "executionTimeMillisEstimate": 1305
+          },
+          {
+            "$sort": {
+              "sortKey": {
+                "review_count": -1
+              },
+              "limit": 10
+            },
+            "totalDataSizeSortedBytesEstimate": 4270,
+            "usedDisk": false,
+            "spills": 0,
+            "spilledDataStorageSize": 0,
+            "nReturned": 10,
+            "executionTimeMillisEstimate": 1305
+          }
+        ],
+        "queryShapeHash": "7A43770E804CF206CCBAA38152620774D52841EC8E3474875A2BC7B92B06F04C",
+        "serverInfo": {
+          "host": "f9a3cab5b758",
+          "port": 27017,
+          "version": "8.0.34",
+          "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+        },
+        "serverParameters": {
+          "internalQueryFacetBufferSizeBytes": 104857600,
+          "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+          "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+          "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+          "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+          "internalQueryProhibitBlockingMergeOnMongoS": 0,
+          "internalQueryMaxAddToSetBytes": 104857600,
+          "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+          "internalQueryFrameworkControl": "trySbeRestricted",
+          "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+        },
+        "command": {
+          "aggregate": "reviews",
+          "pipeline": [
+            {
+              "$group": {
+                "_id": "$business_id",
+                "review_count": {
+                  "$sum": 1
+                },
+                "avg_stars": {
+                  "$avg": "$stars"
+                }
+              }
+            },
+            {
+              "$sort": {
+                "review_count": -1
+              }
+            },
+            {
+              "$limit": 10
+            }
+          ],
+          "cursor": {},
+          "allowDiskUse": true,
+          "$db": "yelp"
+        },
+        "ok": 1.0
+      }
+    },
+    "with_index:round3:Q1_business_id": {
+      "stats": {
+        "docs_examined": 19,
+        "keys_examined": 19,
+        "explain_ms": 1
+      },
+      "explain": {
+        "explainVersion": "1",
+        "queryPlanner": {
+          "namespace": "yelp.reviews",
+          "parsedQuery": {
+            "business_id": {
+              "$eq": "LGi-u2zVoSciM0F_2nSg8g"
+            }
+          },
+          "indexFilterSet": false,
+          "queryHash": "56E4EBD4",
+          "planCacheShapeHash": "56E4EBD4",
+          "planCacheKey": "C57D3BB5",
+          "optimizationTimeMillis": 0,
+          "maxIndexedOrSolutionsReached": false,
+          "maxIndexedAndSolutionsReached": false,
+          "maxScansToExplodeReached": false,
+          "prunedSimilarIndexes": false,
+          "winningPlan": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "FETCH",
+              "inputStage": {
+                "stage": "IXSCAN",
+                "keyPattern": {
+                  "business_id": 1
+                },
+                "indexName": "business_id_1",
+                "isMultiKey": false,
+                "multiKeyPaths": {
+                  "business_id": []
+                },
+                "isUnique": false,
+                "isSparse": false,
+                "isPartial": false,
+                "indexVersion": 2,
+                "direction": "forward",
+                "indexBounds": {
+                  "business_id": [
+                    "[\"LGi-u2zVoSciM0F_2nSg8g\", \"LGi-u2zVoSciM0F_2nSg8g\"]"
+                  ]
+                }
+              }
+            }
+          },
+          "rejectedPlans": []
+        },
+        "executionStats": {
+          "executionSuccess": true,
+          "nReturned": 19,
+          "executionTimeMillis": 1,
+          "totalKeysExamined": 19,
+          "totalDocsExamined": 19,
+          "executionStages": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "nReturned": 19,
+            "executionTimeMillisEstimate": 2,
+            "works": 20,
+            "advanced": 19,
+            "needTime": 0,
+            "needYield": 0,
+            "saveState": 0,
+            "restoreState": 0,
+            "isEOF": 1,
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "FETCH",
+              "nReturned": 19,
+              "executionTimeMillisEstimate": 2,
+              "works": 20,
+              "advanced": 19,
+              "needTime": 0,
+              "needYield": 0,
+              "saveState": 0,
+              "restoreState": 0,
+              "isEOF": 1,
+              "docsExamined": 19,
+              "alreadyHasObj": 0,
+              "inputStage": {
+                "stage": "IXSCAN",
+                "nReturned": 19,
+                "executionTimeMillisEstimate": 0,
+                "works": 20,
+                "advanced": 19,
+                "needTime": 0,
+                "needYield": 0,
+                "saveState": 0,
+                "restoreState": 0,
+                "isEOF": 1,
+                "keyPattern": {
+                  "business_id": 1
+                },
+                "indexName": "business_id_1",
+                "isMultiKey": false,
+                "multiKeyPaths": {
+                  "business_id": []
+                },
+                "isUnique": false,
+                "isSparse": false,
+                "isPartial": false,
+                "indexVersion": 2,
+                "direction": "forward",
+                "indexBounds": {
+                  "business_id": [
+                    "[\"LGi-u2zVoSciM0F_2nSg8g\", \"LGi-u2zVoSciM0F_2nSg8g\"]"
+                  ]
+                },
+                "keysExamined": 19,
+                "seeks": 1,
+                "dupsTested": 0,
+                "dupsDropped": 0
+              }
+            }
+          }
+        },
+        "queryShapeHash": "E85AFF87F3DA2366985B9CFFFD95F2470E42C3CC6BCC7C0D3201AF9B218E1F1E",
+        "command": {
+          "find": "reviews",
+          "filter": {
+            "business_id": "LGi-u2zVoSciM0F_2nSg8g"
+          },
+          "projection": {
+            "_id": 1
+          },
+          "$db": "yelp"
+        },
+        "serverInfo": {
+          "host": "f9a3cab5b758",
+          "port": 27017,
+          "version": "8.0.34",
+          "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+        },
+        "serverParameters": {
+          "internalQueryFacetBufferSizeBytes": 104857600,
+          "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+          "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+          "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+          "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+          "internalQueryProhibitBlockingMergeOnMongoS": 0,
+          "internalQueryMaxAddToSetBytes": 104857600,
+          "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+          "internalQueryFrameworkControl": "trySbeRestricted",
+          "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+        },
+        "ok": 1.0
+      }
+    },
+    "with_index:round3:Q2_user_id": {
+      "stats": {
+        "docs_examined": 75,
+        "keys_examined": 75,
+        "explain_ms": 2
+      },
+      "explain": {
+        "explainVersion": "1",
+        "queryPlanner": {
+          "namespace": "yelp.reviews",
+          "parsedQuery": {
+            "user_id": {
+              "$eq": "zfD3xhVNkGJs-AOOSslqtQ"
+            }
+          },
+          "indexFilterSet": false,
+          "queryHash": "590112A4",
+          "planCacheShapeHash": "590112A4",
+          "planCacheKey": "E91959B5",
+          "optimizationTimeMillis": 0,
+          "maxIndexedOrSolutionsReached": false,
+          "maxIndexedAndSolutionsReached": false,
+          "maxScansToExplodeReached": false,
+          "prunedSimilarIndexes": false,
+          "winningPlan": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "FETCH",
+              "inputStage": {
+                "stage": "IXSCAN",
+                "keyPattern": {
+                  "user_id": 1
+                },
+                "indexName": "user_id_1",
+                "isMultiKey": false,
+                "multiKeyPaths": {
+                  "user_id": []
+                },
+                "isUnique": false,
+                "isSparse": false,
+                "isPartial": false,
+                "indexVersion": 2,
+                "direction": "forward",
+                "indexBounds": {
+                  "user_id": [
+                    "[\"zfD3xhVNkGJs-AOOSslqtQ\", \"zfD3xhVNkGJs-AOOSslqtQ\"]"
+                  ]
+                }
+              }
+            }
+          },
+          "rejectedPlans": []
+        },
+        "executionStats": {
+          "executionSuccess": true,
+          "nReturned": 75,
+          "executionTimeMillis": 2,
+          "totalKeysExamined": 75,
+          "totalDocsExamined": 75,
+          "executionStages": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "nReturned": 75,
+            "executionTimeMillisEstimate": 0,
+            "works": 76,
+            "advanced": 75,
+            "needTime": 0,
+            "needYield": 0,
+            "saveState": 0,
+            "restoreState": 0,
+            "isEOF": 1,
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "FETCH",
+              "nReturned": 75,
+              "executionTimeMillisEstimate": 0,
+              "works": 76,
+              "advanced": 75,
+              "needTime": 0,
+              "needYield": 0,
+              "saveState": 0,
+              "restoreState": 0,
+              "isEOF": 1,
+              "docsExamined": 75,
+              "alreadyHasObj": 0,
+              "inputStage": {
+                "stage": "IXSCAN",
+                "nReturned": 75,
+                "executionTimeMillisEstimate": 0,
+                "works": 76,
+                "advanced": 75,
+                "needTime": 0,
+                "needYield": 0,
+                "saveState": 0,
+                "restoreState": 0,
+                "isEOF": 1,
+                "keyPattern": {
+                  "user_id": 1
+                },
+                "indexName": "user_id_1",
+                "isMultiKey": false,
+                "multiKeyPaths": {
+                  "user_id": []
+                },
+                "isUnique": false,
+                "isSparse": false,
+                "isPartial": false,
+                "indexVersion": 2,
+                "direction": "forward",
+                "indexBounds": {
+                  "user_id": [
+                    "[\"zfD3xhVNkGJs-AOOSslqtQ\", \"zfD3xhVNkGJs-AOOSslqtQ\"]"
+                  ]
+                },
+                "keysExamined": 75,
+                "seeks": 1,
+                "dupsTested": 0,
+                "dupsDropped": 0
+              }
+            }
+          }
+        },
+        "queryShapeHash": "E852616D3ACB59342A9CBB9088146B2349A585D566AA3BE789EC3A7F12C3DE9C",
+        "command": {
+          "find": "reviews",
+          "filter": {
+            "user_id": "zfD3xhVNkGJs-AOOSslqtQ"
+          },
+          "projection": {
+            "_id": 1
+          },
+          "$db": "yelp"
+        },
+        "serverInfo": {
+          "host": "f9a3cab5b758",
+          "port": 27017,
+          "version": "8.0.34",
+          "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+        },
+        "serverParameters": {
+          "internalQueryFacetBufferSizeBytes": 104857600,
+          "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+          "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+          "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+          "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+          "internalQueryProhibitBlockingMergeOnMongoS": 0,
+          "internalQueryMaxAddToSetBytes": 104857600,
+          "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+          "internalQueryFrameworkControl": "trySbeRestricted",
+          "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+        },
+        "ok": 1.0
+      }
+    },
+    "with_index:round3:Q3_date_month": {
+      "stats": {
+        "docs_examined": 5714,
+        "keys_examined": 5714,
+        "explain_ms": 265
+      },
+      "explain": {
+        "explainVersion": "1",
+        "queryPlanner": {
+          "namespace": "yelp.reviews",
+          "parsedQuery": {
+            "$and": [
+              {
+                "date": {
+                  "$lt": "2013-10-01"
+                }
+              },
+              {
+                "date": {
+                  "$gte": "2013-09-01"
+                }
+              }
+            ]
+          },
+          "indexFilterSet": false,
+          "queryHash": "3E3E3A20",
+          "planCacheShapeHash": "3E3E3A20",
+          "planCacheKey": "F35341E2",
+          "optimizationTimeMillis": 0,
+          "maxIndexedOrSolutionsReached": false,
+          "maxIndexedAndSolutionsReached": false,
+          "maxScansToExplodeReached": false,
+          "prunedSimilarIndexes": false,
+          "winningPlan": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "FETCH",
+              "inputStage": {
+                "stage": "IXSCAN",
+                "keyPattern": {
+                  "date": 1
+                },
+                "indexName": "date_1",
+                "isMultiKey": false,
+                "multiKeyPaths": {
+                  "date": []
+                },
+                "isUnique": false,
+                "isSparse": false,
+                "isPartial": false,
+                "indexVersion": 2,
+                "direction": "forward",
+                "indexBounds": {
+                  "date": [
+                    "[\"2013-09-01\", \"2013-10-01\")"
+                  ]
+                }
+              }
+            }
+          },
+          "rejectedPlans": []
+        },
+        "executionStats": {
+          "executionSuccess": true,
+          "nReturned": 5714,
+          "executionTimeMillis": 265,
+          "totalKeysExamined": 5714,
+          "totalDocsExamined": 5714,
+          "executionStages": {
+            "isCached": false,
+            "stage": "PROJECTION_SIMPLE",
+            "nReturned": 5714,
+            "executionTimeMillisEstimate": 262,
+            "works": 5715,
+            "advanced": 5714,
+            "needTime": 0,
+            "needYield": 0,
+            "saveState": 13,
+            "restoreState": 13,
+            "isEOF": 1,
+            "transformBy": {
+              "_id": 1
+            },
+            "inputStage": {
+              "stage": "FETCH",
+              "nReturned": 5714,
+              "executionTimeMillisEstimate": 262,
+              "works": 5715,
+              "advanced": 5714,
+              "needTime": 0,
+              "needYield": 0,
+              "saveState": 13,
+              "restoreState": 13,
+              "isEOF": 1,
+              "docsExamined": 5714,
+              "alreadyHasObj": 0,
+              "inputStage": {
+                "stage": "IXSCAN",
+                "nReturned": 5714,
+                "executionTimeMillisEstimate": 10,
+                "works": 5715,
+                "advanced": 5714,
+                "needTime": 0,
+                "needYield": 0,
+                "saveState": 13,
+                "restoreState": 13,
+                "isEOF": 1,
+                "keyPattern": {
+                  "date": 1
+                },
+                "indexName": "date_1",
+                "isMultiKey": false,
+                "multiKeyPaths": {
+                  "date": []
+                },
+                "isUnique": false,
+                "isSparse": false,
+                "isPartial": false,
+                "indexVersion": 2,
+                "direction": "forward",
+                "indexBounds": {
+                  "date": [
+                    "[\"2013-09-01\", \"2013-10-01\")"
+                  ]
+                },
+                "keysExamined": 5714,
+                "seeks": 1,
+                "dupsTested": 0,
+                "dupsDropped": 0
+              }
+            }
+          }
+        },
+        "queryShapeHash": "22DCAEB5364824CD33F4F911CD52E4AD4D447A8E66552369769140F3F7EAE482",
+        "command": {
+          "find": "reviews",
+          "filter": {
+            "date": {
+              "$gte": "2013-09-01",
+              "$lt": "2013-10-01"
+            }
+          },
+          "projection": {
+            "_id": 1
+          },
+          "$db": "yelp"
+        },
+        "serverInfo": {
+          "host": "f9a3cab5b758",
+          "port": 27017,
+          "version": "8.0.34",
+          "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+        },
+        "serverParameters": {
+          "internalQueryFacetBufferSizeBytes": 104857600,
+          "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+          "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+          "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+          "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+          "internalQueryProhibitBlockingMergeOnMongoS": 0,
+          "internalQueryMaxAddToSetBytes": 104857600,
+          "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+          "internalQueryFrameworkControl": "trySbeRestricted",
+          "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+        },
+        "ok": 1.0
+      }
+    },
+    "with_index:round3:Q4_group_top10": {
+      "stats": {
+        "docs_examined": 1000000,
+        "keys_examined": 0,
+        "explain_ms": 1398
+      },
+      "explain": {
+        "explainVersion": "2",
+        "stages": [
+          {
+            "$cursor": {
+              "queryPlanner": {
+                "namespace": "yelp.reviews",
+                "parsedQuery": {},
+                "indexFilterSet": false,
+                "queryHash": "739402EB",
+                "planCacheShapeHash": "739402EB",
+                "planCacheKey": "4588F5D7",
+                "optimizationTimeMillis": 0,
+                "maxIndexedOrSolutionsReached": false,
+                "maxIndexedAndSolutionsReached": false,
+                "maxScansToExplodeReached": false,
+                "prunedSimilarIndexes": false,
+                "winningPlan": {
+                  "isCached": false,
+                  "queryPlan": {
+                    "stage": "GROUP",
+                    "planNodeId": 3,
+                    "inputStage": {
+                      "stage": "COLLSCAN",
+                      "planNodeId": 1,
+                      "filter": {},
+                      "direction": "forward"
+                    }
+                  },
+                  "slotBasedPlan": {
+                    "slots": "$$RESULT=s14 env: {  }",
+                    "stages": "[3] project [s14 = newObj(\"_id\", s8, \"review_count\", s12, \"avg_stars\", s13)] \n[3] project [s12 = (convert ( s9, int32) ?: s9), s13 = \n    if (s11 == 0ll) \n    then null \n    else (doubleDoubleSumFinalize(s10) / s11) \n] \n[3] group [s8] [s9 = count(), s10 = aggDoubleDoubleSum(s2), s11 = sum(\n    if ((typeMatch(s2, 1088) ?: true) || !(isNumber(s2))) \n    then 0ll \n    else 1ll \n)] spillSlots[s5, s6, s7] mergingExprs[sum(s5), aggMergeDoubleDoubleSums(s6), sum(s7)] \n[3] project [s8 = (s1 ?: null)] \n[1] scan s3 s4 none none none none none none lowPriority [s1 = business_id, s2 = stars] @\"1d2a0186-3b53-45a1-bde9-8b6112383cb9\" true false "
+                  }
+                },
+                "rejectedPlans": []
+              },
+              "executionStats": {
+                "executionSuccess": true,
+                "nReturned": 27095,
+                "executionTimeMillis": 1398,
+                "totalKeysExamined": 0,
+                "totalDocsExamined": 1000000,
+                "executionStages": {
+                  "stage": "project",
+                  "planNodeId": 3,
+                  "nReturned": 27095,
+                  "executionTimeMillisEstimate": 1365,
+                  "opens": 1,
+                  "closes": 1,
+                  "saveState": 82,
+                  "restoreState": 82,
+                  "isEOF": 1,
+                  "projections": {
+                    "14": "newObj(\"_id\", s8, \"review_count\", s12, \"avg_stars\", s13) "
+                  },
+                  "inputStage": {
+                    "stage": "project",
+                    "planNodeId": 3,
+                    "nReturned": 27095,
+                    "executionTimeMillisEstimate": 1360,
+                    "opens": 1,
+                    "closes": 1,
+                    "saveState": 82,
+                    "restoreState": 82,
+                    "isEOF": 1,
+                    "projections": {
+                      "12": "(convert ( s9, int32) ?: s9) ",
+                      "13": "\n    if (s11 == 0ll) \n    then null \n    else (doubleDoubleSumFinalize(s10) / s11) \n"
+                    },
+                    "inputStage": {
+                      "stage": "group",
+                      "planNodeId": 3,
+                      "nReturned": 27095,
+                      "executionTimeMillisEstimate": 1360,
+                      "opens": 1,
+                      "closes": 1,
+                      "saveState": 82,
+                      "restoreState": 82,
+                      "isEOF": 1,
+                      "groupBySlots": [
+                        8
+                      ],
+                      "expressions": {
+                        "9": "count() ",
+                        "10": "aggDoubleDoubleSum(s2) ",
+                        "11": "sum(\n    if ((typeMatch(s2, 1088) ?: true) || !(isNumber(s2))) \n    then 0ll \n    else 1ll \n) ",
+                        "initExprs": {
+                          "9": null,
+                          "10": null,
+                          "11": null
+                        }
+                      },
+                      "mergingExprs": {
+                        "5": "sum(s5) ",
+                        "6": "aggMergeDoubleDoubleSums(s6) ",
+                        "7": "sum(s7) "
+                      },
+                      "usedDisk": false,
+                      "spills": 0,
+                      "spilledBytes": 0,
+                      "spilledRecords": 0,
+                      "spilledDataStorageSize": 0,
+                      "inputStage": {
+                        "stage": "project",
+                        "planNodeId": 3,
+                        "nReturned": 1000000,
+                        "executionTimeMillisEstimate": 1018,
+                        "opens": 1,
+                        "closes": 1,
+                        "saveState": 82,
+                        "restoreState": 82,
+                        "isEOF": 1,
+                        "projections": {
+                          "8": "(s1 ?: null) "
+                        },
+                        "inputStage": {
+                          "stage": "scan",
+                          "planNodeId": 1,
+                          "nReturned": 1000000,
+                          "executionTimeMillisEstimate": 998,
+                          "opens": 1,
+                          "closes": 1,
+                          "saveState": 82,
+                          "restoreState": 82,
+                          "isEOF": 1,
+                          "numReads": 1000000,
+                          "recordSlot": 3,
+                          "recordIdSlot": 4,
+                          "scanFieldNames": [
+                            "business_id",
+                            "stars"
+                          ],
+                          "scanFieldSlots": [
+                            1,
+                            2
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "nReturned": 27095,
+            "executionTimeMillisEstimate": 1396
+          },
+          {
+            "$sort": {
+              "sortKey": {
+                "review_count": -1
+              },
+              "limit": 10
+            },
+            "totalDataSizeSortedBytesEstimate": 4270,
+            "usedDisk": false,
+            "spills": 0,
+            "spilledDataStorageSize": 0,
+            "nReturned": 10,
+            "executionTimeMillisEstimate": 1396
+          }
+        ],
+        "queryShapeHash": "7A43770E804CF206CCBAA38152620774D52841EC8E3474875A2BC7B92B06F04C",
+        "serverInfo": {
+          "host": "f9a3cab5b758",
+          "port": 27017,
+          "version": "8.0.34",
+          "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+        },
+        "serverParameters": {
+          "internalQueryFacetBufferSizeBytes": 104857600,
+          "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+          "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+          "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+          "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+          "internalQueryProhibitBlockingMergeOnMongoS": 0,
+          "internalQueryMaxAddToSetBytes": 104857600,
+          "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+          "internalQueryFrameworkControl": "trySbeRestricted",
+          "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+        },
+        "command": {
+          "aggregate": "reviews",
+          "pipeline": [
+            {
+              "$group": {
+                "_id": "$business_id",
+                "review_count": {
+                  "$sum": 1
+                },
+                "avg_stars": {
+                  "$avg": "$stars"
+                }
+              }
+            },
+            {
+              "$sort": {
+                "review_count": -1
+              }
+            },
+            {
+              "$limit": 10
+            }
+          ],
+          "cursor": {},
+          "allowDiskUse": true,
+          "$db": "yelp"
+        },
+        "ok": 1.0
+      }
+    }
+  }
+}

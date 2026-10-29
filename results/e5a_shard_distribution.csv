@@ -1,0 +1,7 @@
+﻿timestamp,collection,shard,insert_op_delta,insert_share_pct,client_inserted,elapsed_s,docs_in_shard_collStats,docs_share_pct
+2026-10-29T16:01:11+07:00,reviews_range,shard1,100000,100.0,100000,3.286,100000,100.0
+2026-10-29T16:01:11+07:00,reviews_range,shard2,0,0.0,100000,3.286,,0
+2026-10-29T16:01:11+07:00,reviews_range,shard3,0,0.0,100000,3.286,,0
+2026-10-29T16:01:14+07:00,reviews_hashed_seq,shard1,33142,33.14,100000,3.085,33142,33.14
+2026-10-29T16:01:14+07:00,reviews_hashed_seq,shard2,33103,33.1,100000,3.085,33103,33.1
+2026-10-29T16:01:14+07:00,reviews_hashed_seq,shard3,33755,33.76,100000,3.085,33755,33.76

@@ -1,0 +1,7 @@
+﻿timestamp,db,collection,source_file,start_line,limit,read,inserted,write_errors,count_before,count_after,elapsed_s,docs_per_s
+2026-10-29T14:47:57+07:00,yelp,business,data\raw\yelp_academic_dataset_business.json,0,200000,150346,150346,0,0,150346,3.874,38808.73
+2026-10-29T14:48:36+07:00,yelp,reviews,data\raw\yelp_academic_dataset_review.json,0,500000,500000,500000,0,0,500000,10.566,47322.34
+2026-10-29T14:50:29+07:00,yelp,reviews,data\raw\yelp_academic_dataset_review.json,500000,500000,500000,500000,0,500000,1000000,28.987,17248.87
+2026-10-29T14:57:08+07:00,yelp,reviews,data\raw\yelp_academic_dataset_review.json,1000000,1000000,1000000,1000000,0,1000000,2000000,147.53,6778.29
+2026-10-29T15:51:38+07:00,yelp,reviews_e5c,data\raw\yelp_academic_dataset_review.json,0,2000000,2000000,2000000,0,0,2000000,96.694,20683.8
+2026-10-29T16:01:37+07:00,yelp,reviews_targeted,data\raw\yelp_academic_dataset_review.json,0,100000,100000,100000,0,0,100000,2.858,34994.13

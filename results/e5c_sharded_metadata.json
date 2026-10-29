@@ -1,0 +1,341 @@
+{
+  "timestamp": "2026-10-29T16:00:26+07:00",
+  "experiment": "E5c",
+  "role": "sharded",
+  "uri": "from .env/default localhost:27017",
+  "database": "yelp",
+  "collection": "reviews_e5c",
+  "n_docs": 2000000,
+  "fixture_file": "D:\\MongoDB_BigData_uv_E5c_troubleshooting_v2\\mongodb_bigdata_lab\\results\\e5c_query_keys.json",
+  "fixture_sha256": "7ec650a8590a2bb34463d7dbb65739da34400fee8dfd2af4347881b4c9fc6941",
+  "query_key_count": 50000,
+  "index_information": {
+    "_id_": {
+      "key": [
+        [
+          "_id",
+          1
+        ]
+      ],
+      "unique": false,
+      "sparse": false
+    },
+    "review_id_hashed": {
+      "key": [
+        [
+          "review_id",
+          "hashed"
+        ]
+      ],
+      "unique": false,
+      "sparse": false
+    }
+  },
+  "storage_estimate": {
+    "logical_data_bytes": 1596975712,
+    "total_index_bytes": 166711296,
+    "logical_data_plus_indexes_bytes": 1763687008,
+    "logical_data_plus_indexes_gib_rough_proxy": 1.6426,
+    "note": "This is a rough proxy (logical data size + index size), not a direct measurement of the in-memory working set."
+  },
+  "cache_snapshot_before": {
+    "per_node": {
+      "sh1": {
+        "maximum_bytes_configured": 536870912,
+        "bytes_currently_in_cache": 470265319,
+        "pages_read_into_cache": 23750,
+        "pages_evicted_by_application_threads": null
+      },
+      "sh2": {
+        "maximum_bytes_configured": 536870912,
+        "bytes_currently_in_cache": 461514905,
+        "pages_read_into_cache": 20979,
+        "pages_evicted_by_application_threads": null
+      },
+      "sh3": {
+        "maximum_bytes_configured": 536870912,
+        "bytes_currently_in_cache": 425997776,
+        "pages_read_into_cache": 20225,
+        "pages_evicted_by_application_threads": null
+      }
+    },
+    "maximum_cache_bytes_min": 536870912,
+    "maximum_cache_bytes_max": 536870912,
+    "note": "Collected directly from each shard. Filesystem cache is separate; all containers share host CPU and storage."
+  },
+  "cache_snapshot_after": {
+    "per_node": {
+      "sh1": {
+        "maximum_bytes_configured": 536870912,
+        "bytes_currently_in_cache": 427534328,
+        "pages_read_into_cache": 47317,
+        "pages_evicted_by_application_threads": null
+      },
+      "sh2": {
+        "maximum_bytes_configured": 536870912,
+        "bytes_currently_in_cache": 428147670,
+        "pages_read_into_cache": 43259,
+        "pages_evicted_by_application_threads": null
+      },
+      "sh3": {
+        "maximum_bytes_configured": 536870912,
+        "bytes_currently_in_cache": 426374031,
+        "pages_read_into_cache": 40729,
+        "pages_evicted_by_application_threads": null
+      }
+    },
+    "maximum_cache_bytes_min": 536870912,
+    "maximum_cache_bytes_max": 536870912,
+    "note": "Collected directly from each shard. Filesystem cache is separate; all containers share host CPU and storage."
+  },
+  "rough_cache_ratios": {
+    "cache_gib_used_for_ratio": 0.5,
+    "single_or_cluster_total_proxy_over_cache": 3.285,
+    "largest_shard_proxy_gib": 0.5503,
+    "largest_shard_proxy_over_smallest_shard_cache": 1.101,
+    "target_guide": "For the cache-wall comparison, the rough proxy D may target about 2.5-2.8 x single-node cache while largest-shard D should be at or below about 0.9 x shard cache. This proxy is approximate; report actual values and do not claim a cache-wall result if the target is not met."
+  },
+  "shard_distribution": {
+    "per_shard": {
+      "sh1": {
+        "count": 666107,
+        "data_size_bytes": 531715363,
+        "index_size_bytes": 59179008,
+        "share_pct": 33.305,
+        "data_plus_index_gib": 0.5503
+      },
+      "sh2": {
+        "count": 668532,
+        "data_size_bytes": 533545992,
+        "index_size_bytes": 52953088,
+        "share_pct": 33.427,
+        "data_plus_index_gib": 0.5462
+      },
+      "sh3": {
+        "count": 665361,
+        "data_size_bytes": 531714357,
+        "index_size_bytes": 54579200,
+        "share_pct": 33.268,
+        "data_plus_index_gib": 0.546
+      }
+    },
+    "total_count_from_collStats": 2000000,
+    "active_shards": 3,
+    "max_shard_share_pct": 33.427
+  },
+  "explain_summary": {
+    "docs_examined": 1,
+    "keys_examined": 1,
+    "explain_ms": 0
+  },
+  "explain_sample": {
+    "queryPlanner": {
+      "winningPlan": {
+        "stage": "SINGLE_SHARD",
+        "shards": [
+          {
+            "explainVersion": "1",
+            "shardName": "sh3",
+            "connectionString": "sh3/shard3:27018",
+            "serverInfo": {
+              "host": "70fcc368e309",
+              "port": 27018,
+              "version": "8.0.34",
+              "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+            },
+            "namespace": "yelp.reviews_e5c",
+            "parsedQuery": {
+              "review_id": {
+                "$eq": "UXykqLz_eP2UjpbaHlRjHw"
+              }
+            },
+            "indexFilterSet": false,
+            "queryHash": "E2F6ACED",
+            "planCacheShapeHash": "E2F6ACED",
+            "planCacheKey": "BA51A50C",
+            "optimizationTimeMillis": 0,
+            "maxIndexedOrSolutionsReached": false,
+            "maxIndexedAndSolutionsReached": false,
+            "maxScansToExplodeReached": false,
+            "prunedSimilarIndexes": false,
+            "winningPlan": {
+              "isCached": false,
+              "stage": "PROJECTION_SIMPLE",
+              "transformBy": {
+                "_id": 1
+              },
+              "inputStage": {
+                "stage": "FETCH",
+                "filter": {
+                  "review_id": {
+                    "$eq": "UXykqLz_eP2UjpbaHlRjHw"
+                  }
+                },
+                "inputStage": {
+                  "stage": "IXSCAN",
+                  "keyPattern": {
+                    "review_id": "hashed"
+                  },
+                  "indexName": "review_id_hashed",
+                  "isMultiKey": false,
+                  "isUnique": false,
+                  "isSparse": false,
+                  "isPartial": false,
+                  "indexVersion": 2,
+                  "direction": "forward",
+                  "indexBounds": {
+                    "review_id": [
+                      "[-7647413456163457833, -7647413456163457833]"
+                    ]
+                  }
+                }
+              }
+            },
+            "rejectedPlans": []
+          }
+        ]
+      }
+    },
+    "executionStats": {
+      "nReturned": 1,
+      "executionTimeMillis": 0,
+      "totalKeysExamined": 1,
+      "totalDocsExamined": 1,
+      "executionStages": {
+        "stage": "SINGLE_SHARD",
+        "nReturned": 1,
+        "executionTimeMillis": 0,
+        "totalKeysExamined": 1,
+        "totalDocsExamined": 1,
+        "totalChildMillis": 0,
+        "shards": [
+          {
+            "shardName": "sh3",
+            "executionSuccess": true,
+            "nReturned": 1,
+            "executionTimeMillis": 0,
+            "totalKeysExamined": 1,
+            "totalDocsExamined": 1,
+            "executionStages": {
+              "isCached": false,
+              "stage": "PROJECTION_SIMPLE",
+              "nReturned": 1,
+              "executionTimeMillisEstimate": 0,
+              "works": 2,
+              "advanced": 1,
+              "needTime": 0,
+              "needYield": 0,
+              "saveState": 0,
+              "restoreState": 0,
+              "isEOF": 1,
+              "transformBy": {
+                "_id": 1
+              },
+              "inputStage": {
+                "stage": "FETCH",
+                "filter": {
+                  "review_id": {
+                    "$eq": "UXykqLz_eP2UjpbaHlRjHw"
+                  }
+                },
+                "nReturned": 1,
+                "executionTimeMillisEstimate": 0,
+                "works": 2,
+                "advanced": 1,
+                "needTime": 0,
+                "needYield": 0,
+                "saveState": 0,
+                "restoreState": 0,
+                "isEOF": 1,
+                "docsExamined": 1,
+                "alreadyHasObj": 0,
+                "inputStage": {
+                  "stage": "IXSCAN",
+                  "nReturned": 1,
+                  "executionTimeMillisEstimate": 0,
+                  "works": 2,
+                  "advanced": 1,
+                  "needTime": 0,
+                  "needYield": 0,
+                  "saveState": 0,
+                  "restoreState": 0,
+                  "isEOF": 1,
+                  "keyPattern": {
+                    "review_id": "hashed"
+                  },
+                  "indexName": "review_id_hashed",
+                  "isMultiKey": false,
+                  "isUnique": false,
+                  "isSparse": false,
+                  "isPartial": false,
+                  "indexVersion": 2,
+                  "direction": "forward",
+                  "indexBounds": {
+                    "review_id": [
+                      "[-7647413456163457833, -7647413456163457833]"
+                    ]
+                  },
+                  "keysExamined": 1,
+                  "seeks": 1,
+                  "dupsTested": 0,
+                  "dupsDropped": 0
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "queryShapeHash": "B4BBD4F7F9FFF23DABAF28AE18A03001DCEAC83432A5C992DF69B7EEF6E36C2B",
+    "serverInfo": {
+      "host": "9e3e0af5ae26",
+      "port": 27017,
+      "version": "8.0.34",
+      "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+    },
+    "serverParameters": {
+      "internalQueryFacetBufferSizeBytes": 104857600,
+      "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+      "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+      "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+      "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+      "internalQueryProhibitBlockingMergeOnMongoS": 0,
+      "internalQueryMaxAddToSetBytes": 104857600,
+      "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+      "internalQueryFrameworkControl": "trySbeRestricted",
+      "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+    },
+    "command": {
+      "find": "reviews_e5c",
+      "filter": {
+        "review_id": "UXykqLz_eP2UjpbaHlRjHw"
+      },
+      "projection": {
+        "_id": 1
+      },
+      "lsid": {
+        "id": "b'vj\\xdf\\xa2\\xa0\\xa7Im\\x96\\xa9\\xac\\xfd\\xd3\\xf3\\xfel'"
+      },
+      "$clusterTime": {
+        "clusterTime": "Timestamp(1793263919, 1)",
+        "signature": {
+          "hash": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00'",
+          "keyId": 0
+        }
+      },
+      "$db": "yelp"
+    },
+    "ok": 1.0,
+    "$clusterTime": {
+      "clusterTime": "Timestamp(1793263919, 1)",
+      "signature": {
+        "hash": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00'",
+        "keyId": 0
+      }
+    },
+    "operationTime": "Timestamp(1793263917, 1)"
+  },
+  "rounds_file": "D:\\MongoDB_BigData_uv_E5c_troubleshooting_v2\\mongodb_bigdata_lab\\results\\e5c_sharded_rounds.csv",
+  "raw_file": "D:\\MongoDB_BigData_uv_E5c_troubleshooting_v2\\mongodb_bigdata_lab\\results\\e5c_sharded_raw.csv",
+  "interpretation_note": "This is a single laptop. All Docker containers share physical CPU/storage; measured latency includes Python/PyMongo round-trip and mongos routing for the sharded configuration. This does not establish production-scale throughput."
+}

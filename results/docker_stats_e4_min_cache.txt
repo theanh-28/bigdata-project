@@ -1,0 +1,2 @@
+CONTAINER ID   NAME        CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O    PIDS
+9a4b91c8715f   mongo-exp   0.84%     545.9MiB / 1.074GiB   49.63%    31.5MB / 23.7MB   0B / 848kB   48

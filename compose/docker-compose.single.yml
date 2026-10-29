@@ -1,0 +1,14 @@
+name: mongodb-bigdata-lab-single
+services:
+  mongo:
+    image: mongo:8.0
+    container_name: mongo-exp
+    command: ["mongod", "--bind_ip_all", "--wiredTigerCacheSizeGB", "${WT_CACHE_GB:-0.5}"]
+    ports:
+      - "127.0.0.1:${MONGO_PORT:-27017}:27017"
+    mem_limit: ${MONGO_MEMORY_LIMIT:-1500m}
+    volumes:
+      - mongo_data:/data/db
+    restart: unless-stopped
+volumes:
+  mongo_data:

@@ -1,0 +1,86 @@
+[
+  {
+    "timestamp": "2026-10-29T16:01:11+07:00",
+    "collection": "reviews_range",
+    "source_file": "data\\raw\\yelp_academic_dataset_review.json",
+    "start": 0,
+    "requested_limit": 100000,
+    "inserted_by_client": 100000,
+    "elapsed_s": 3.286,
+    "client_docs_per_s": 30435.77,
+    "counter_before": {
+      "shard1": 666149,
+      "shard2": 668545,
+      "shard3": 665374
+    },
+    "counter_after": {
+      "shard1": 766149,
+      "shard2": 668545,
+      "shard3": 665374
+    },
+    "insert_op_delta": {
+      "shard1": 100000,
+      "shard2": 0,
+      "shard3": 0
+    },
+    "insert_share_pct": {
+      "shard1": 100.0,
+      "shard2": 0.0,
+      "shard3": 0.0
+    },
+    "shard_doc_counts_from_collStats": {
+      "shard1": 100000
+    },
+    "shard_doc_share_pct": {
+      "shard1": 100.0
+    },
+    "collStats_shard_names": [
+      "sh1"
+    ]
+  },
+  {
+    "timestamp": "2026-10-29T16:01:14+07:00",
+    "collection": "reviews_hashed_seq",
+    "source_file": "data\\raw\\yelp_academic_dataset_review.json",
+    "start": 0,
+    "requested_limit": 100000,
+    "inserted_by_client": 100000,
+    "elapsed_s": 3.085,
+    "client_docs_per_s": 32418.06,
+    "counter_before": {
+      "shard1": 766149,
+      "shard2": 668545,
+      "shard3": 665374
+    },
+    "counter_after": {
+      "shard1": 799291,
+      "shard2": 701648,
+      "shard3": 699129
+    },
+    "insert_op_delta": {
+      "shard1": 33142,
+      "shard2": 33103,
+      "shard3": 33755
+    },
+    "insert_share_pct": {
+      "shard1": 33.14,
+      "shard2": 33.1,
+      "shard3": 33.76
+    },
+    "shard_doc_counts_from_collStats": {
+      "shard1": 33142,
+      "shard2": 33103,
+      "shard3": 33755
+    },
+    "shard_doc_share_pct": {
+      "shard1": 33.14,
+      "shard2": 33.1,
+      "shard3": 33.76
+    },
+    "collStats_shard_names": [
+      "sh1",
+      "sh2",
+      "sh3"
+    ]
+  }
+]

@@ -1,0 +1,4 @@
+﻿timestamp,experiment,role,collection,n_docs,round,warmup_ops,measured_ops,key_count,p50_ms,p95_ms,p99_ms,mean_ms,ops_s,ops_s_elapsed_wall,found_count,missing_count,logical_data_plus_indexes_gib_rough_proxy,cache_gib,largest_shard_proxy_gib,shard_distribution_json
+2026-10-29T15:43:40+07:00,E5c,single,reviews,2000000,1,20000,50000,50000,1.3784,2.19651,2.64381,1.48238,674.59169,669.235,50000,0,1.6419,0.5,,{}
+2026-10-29T15:45:22+07:00,E5c,single,reviews,2000000,2,20000,50000,50000,1.38615,2.22412,2.6965,1.49448,669.12807,663.811,50000,0,1.6419,0.5,,{}
+2026-10-29T15:47:07+07:00,E5c,single,reviews,2000000,3,20000,50000,50000,1.3663,2.18511,2.64434,1.47209,679.30723,673.906,50000,0,1.6419,0.5,,{}

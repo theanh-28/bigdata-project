@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-10-29T15:12:38+07:00",
+  "collection": "yelp.reviews",
+  "count": 2000000,
+  "size_bytes_logical": 1596975712,
+  "storage_size_bytes": 1100021760,
+  "total_index_size_bytes": 165969920,
+  "D_logical_plus_indexes_gib_rough_estimate": 1.6419,
+  "wiredTiger_cache": {
+    "bytes currently in the cache": 504481910,
+    "maximum bytes configured": 536870912,
+    "pages read into cache": 10803727,
+    "pages written from cache": 2433793,
+    "pages requested from the cache": 28104102
+  },
+  "note": "Rough estimate only: WiredTiger in-memory representation differs from on-disk BSON/storage size."
+}

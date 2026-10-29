@@ -1,0 +1,14 @@
+{
+  "experiment": "E1",
+  "database": "yelp",
+  "collection": "business",
+  "business_documents": 150346,
+  "documents_with_object_attributes": 136602,
+  "documents_without_object_attributes_or_null": 13744,
+  "distinct_non_null_attribute_keys_K": 39,
+  "attribute_value_presence_cells": 1206820,
+  "estimated_flat_table_null_cells_pct": 79.4181,
+  "keys_present_in_less_than_50pct_businesses": 36,
+  "fraction_of_keys_present_in_less_than_50pct_businesses": 0.9231,
+  "interpretation_note": "Sparsity is an estimate from observed non-null attribute values. Attribute keys with explicit null values are treated as missing cells."
+}

@@ -1,0 +1,4 @@
+﻿experiment,query,filter,repeats,p50_ms,p95_ms,p99_ms,mean_ms,ops_s,result_count_last_run,docs_examined,keys_examined,explain_ms
+E5b,targeted_exact_shard_key,{'review_id': '5yFeb_T6SwAX_1HR31ZvNQ'},1000,1.5873,2.718,3.5147,1.7777,562.5208,1,1,1,0
+E5b,scatter_gather_business_id,{'business_id': 'e4Vwtrqf-wpJfwesgvdgxQ'},1000,1.8727,2.8318,3.2647,2.0372,490.8653,8,8,8,1
+E5b,scatter_gather_range_on_hashed_key,"{'review_id': {'$gte': 'FKeSOkrvzy5Gzu88Zw70dQ', '$lt': 'k5CAAqw1cGz0K2jcNuIpcA'}}",1000,2.1893,3.0838,3.4125,2.3223,430.6136,100,603,0,1

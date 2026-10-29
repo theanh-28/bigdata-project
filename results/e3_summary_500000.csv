@@ -1,0 +1,9 @@
+﻿experiment,n_docs,config,query,rounds,repeats_per_round,p50_ms,p95_ms,p99_ms,mean_ms,ops_s,docs_examined,keys_examined,explain_execution_ms,index_size_mb,index_build_ms_total,p95_caveat
+E3,500000,no_index,Q1_business_id,3,10,162.0116,186.6511,187.7753,166.6723,5.9998,500000,0,166,5.004,0.0,"Median of per-round p95; each round has a small number of full-query executions, so interpret as descriptive."
+E3,500000,no_index,Q2_user_id,3,10,157.8074,203.3355,204.7857,165.4735,6.0433,500000,0,162,5.004,0.0,"Median of per-round p95; each round has a small number of full-query executions, so interpret as descriptive."
+E3,500000,no_index,Q3_date_month,3,10,192.8835,224.4599,226.8374,198.9387,5.0267,500000,0,189,5.004,0.0,"Median of per-round p95; each round has a small number of full-query executions, so interpret as descriptive."
+E3,500000,no_index,Q4_group_top10,3,10,274.8869,330.7229,342.8321,284.6631,3.5129,500000,0,286,5.004,0.0,"Median of per-round p95; each round has a small number of full-query executions, so interpret as descriptive."
+E3,500000,with_index,Q1_business_id,3,10,1.1026,1.6859,1.9338,1.2086,827.4105,14,14,0,42.816,3052.581,"Median of per-round p95; each round has a small number of full-query executions, so interpret as descriptive."
+E3,500000,with_index,Q2_user_id,3,10,1.0572,1.2451,1.264,1.0543,948.4876,26,26,0,42.816,3052.581,"Median of per-round p95; each round has a small number of full-query executions, so interpret as descriptive."
+E3,500000,with_index,Q3_date_month,3,10,13.9931,17.0963,18.7435,14.4543,69.1834,2998,2998,12,42.816,3052.581,"Median of per-round p95; each round has a small number of full-query executions, so interpret as descriptive."
+E3,500000,with_index,Q4_group_top10,3,10,277.2975,311.3597,319.005,283.9768,3.5214,500000,0,313,42.816,3052.581,"Median of per-round p95; each round has a small number of full-query executions, so interpret as descriptive."

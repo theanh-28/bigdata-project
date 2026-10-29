@@ -1,0 +1,443 @@
+POST-RUN DOCKER SNAPSHOT — 2026-10-29 16:20 +07
+Captured after E1-E5 measurements; not measurement-time telemetry.
+
+--- docker compose shard ps ---
+NAME           IMAGE       COMMAND                  SERVICE   CREATED          STATUS          PORTS
+mongo-cfg1     mongo:8.0   "docker-entrypoint.s…"   cfg1      17 minutes ago   Up 17 minutes   127.0.0.1:27119->27019/tcp
+mongo-mongos   mongo:8.0   "docker-entrypoint.s…"   mongos    17 minutes ago   Up 17 minutes   127.0.0.1:27017->27017/tcp
+mongo-shard1   mongo:8.0   "docker-entrypoint.s…"   shard1    17 minutes ago   Up 17 minutes   127.0.0.1:27101->27018/tcp
+mongo-shard2   mongo:8.0   "docker-entrypoint.s…"   shard2    17 minutes ago   Up 17 minutes   127.0.0.1:27102->27018/tcp
+mongo-shard3   mongo:8.0   "docker-entrypoint.s…"   shard3    17 minutes ago   Up 17 minutes   127.0.0.1:27103->27018/tcp
+
+--- docker stats --no-stream ---
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O        PIDS
+9e3e0af5ae26   mongo-mongos   0.24%     59.71MiB / 600MiB     9.95%     1.99GB / 1.42GB   373kB / 156kB    31
+4c7fd0dc3621   mongo-cfg1     2.20%     139.2MiB / 700MiB     19.88%    1.62MB / 1.49MB   0B / 19MB        127
+597dfd201a96   mongo-shard2   1.11%     1.007GiB / 1.465GiB   68.71%    433MB / 24.2MB    135MB / 1.61GB   109
+4db431eecb7b   mongo-shard1   1.11%     1.05GiB / 1.465GiB    71.66%    481MB / 24.2MB    136MB / 1.76GB   112
+70fcc368e309   mongo-shard3   0.99%     996.2MiB / 1.465GiB   66.42%    433MB / 24.6MB    149MB / 1.6GB    109
+
+--- shard status and balancer ---
+balancerEnabled=false
+balancerRunning:
+{
+  mode: 'off',
+  inBalancerRound: false,
+  numBalancerRounds: Long('106'),
+  term: Long('1'),
+  ok: 1,
+  '$clusterTime': {
+    clusterTime: Timestamp({ t: 1793264823, i: 1 }),
+    signature: {
+      hash: Binary.createFromBase64('AAAAAAAAAAAAAAAAAAAAAAAAAAA=', 0),
+      keyId: Long('0')
+    }
+  },
+  operationTime: Timestamp({ t: 1793264823, i: 1 })
+}
+shardingVersion
+{
+  _id: 1,
+  clusterId: ObjectId('6ae3089b9b8778da396a06d2')
+}
+---
+shards
+[
+  {
+    _id: 'sh1',
+    host: 'sh1/shard1:27018',
+    state: 1,
+    topologyTime: Timestamp({ t: 1793263785, i: 10 }),
+    replSetConfigVersion: Long('-1')
+  },
+  {
+    _id: 'sh2',
+    host: 'sh2/shard2:27018',
+    state: 1,
+    topologyTime: Timestamp({ t: 1793263785, i: 28 }),
+    replSetConfigVersion: Long('-1')
+  },
+  {
+    _id: 'sh3',
+    host: 'sh3/shard3:27018',
+    state: 1,
+    topologyTime: Timestamp({ t: 1793263785, i: 51 }),
+    replSetConfigVersion: Long('-1')
+  }
+]
+---
+active mongoses
+[
+  {
+    '8.0.34': 1
+  }
+]
+---
+autosplit
+{
+  'Currently enabled': 'yes'
+}
+---
+automerge
+{
+  'Currently enabled': 'no'
+}
+---
+balancer
+{
+  'Currently enabled': 'no',
+  'Currently running': 'no',
+  'Failed balancer rounds in last 5 attempts': 0,
+  'Migration Results for the last 24 hours': 'No recent migrations'
+}
+---
+shardedDataDistribution
+[
+  {
+    ns: 'yelp.reviews_targeted',
+    shards: [
+      {
+        shardName: 'sh2',
+        numOrphanedDocs: 0,
+        numOwnedDocuments: 33096,
+        ownedSizeBytes: 25980360,
+        orphanedSizeBytes: 0
+      },
+      {
+        shardName: 'sh3',
+        numOrphanedDocs: 0,
+        numOwnedDocuments: 33443,
+        ownedSizeBytes: 26085540,
+        orphanedSizeBytes: 0
+      },
+      {
+        shardName: 'sh1',
+        numOrphanedDocs: 0,
+        numOwnedDocuments: 33461,
+        ownedSizeBytes: 26133041,
+        orphanedSizeBytes: 0
+      }
+    ]
+  },
+  {
+    ns: 'config.system.sessions',
+    shards: [
+      {
+        shardName: 'sh1',
+        numOrphanedDocs: 0,
+        numOwnedDocuments: 49,
+        ownedSizeBytes: 4851,
+        orphanedSizeBytes: 0
+      }
+    ]
+  },
+  {
+    ns: 'yelp.reviews_e5c',
+    shards: [
+      {
+        shardName: 'sh2',
+        numOrphanedDocs: 0,
+        numOwnedDocuments: 668532,
+        ownedSizeBytes: 533488536,
+        orphanedSizeBytes: 0
+      },
+      {
+        shardName: 'sh3',
+        numOrphanedDocs: 0,
+        numOwnedDocuments: 665361,
+        ownedSizeBytes: 531623439,
+        orphanedSizeBytes: 0
+      },
+      {
+        shardName: 'sh1',
+        numOrphanedDocs: 0,
+        numOwnedDocuments: 666107,
+        ownedSizeBytes: 531553386,
+        orphanedSizeBytes: 0
+      }
+    ]
+  },
+  {
+    ns: 'yelp.reviews_range',
+    shards: [
+      {
+        shardName: 'sh1',
+        numOrphanedDocs: 0,
+        numOwnedDocuments: 100000,
+        ownedSizeBytes: 78200000,
+        orphanedSizeBytes: 0
+      }
+    ]
+  },
+  {
+    ns: 'yelp.reviews_hashed_seq',
+    shards: [
+      {
+        shardName: 'sh2',
+        numOrphanedDocs: 0,
+        numOwnedDocuments: 33103,
+        ownedSizeBytes: 25919649,
+        orphanedSizeBytes: 0
+      },
+      {
+        shardName: 'sh3',
+        numOrphanedDocs: 0,
+        numOwnedDocuments: 33755,
+        ownedSizeBytes: 26430165,
+        orphanedSizeBytes: 0
+      },
+      {
+        shardName: 'sh1',
+        numOrphanedDocs: 0,
+        numOwnedDocuments: 33142,
+        ownedSizeBytes: 25850760,
+        orphanedSizeBytes: 0
+      }
+    ]
+  }
+]
+---
+databases
+[
+  {
+    database: {
+      _id: 'config',
+      primary: 'config',
+      partitioned: true
+    },
+    collections: {
+      'config.system.sessions': {
+        shardKey: {
+          _id: 1
+        },
+        unique: false,
+        balancing: true,
+        allowMigrations: true,
+        chunkMetadata: [
+          {
+            shard: 'sh1',
+            nChunks: 1
+          }
+        ],
+        chunks: [
+          {
+            min: {
+              _id: MinKey()
+            },
+            max: {
+              _id: MaxKey()
+            },
+            'on shard': 'sh1',
+            'last modified': Timestamp({ t: 1, i: 0 })
+          }
+        ],
+        tags: []
+      }
+    }
+  },
+  {
+    database: {
+      _id: 'yelp',
+      primary: 'sh1',
+      version: {
+        uuid: UUID('ed316c5c-9312-4aa5-ad9a-6743734b605c'),
+        timestamp: Timestamp({ t: 1793263793, i: 2 }),
+        lastMod: 1
+      }
+    },
+    collections: {
+      'yelp.reviews_e5c': {
+        shardKey: {
+          review_id: 'hashed'
+        },
+        unique: false,
+        balancing: true,
+        allowMigrations: true,
+        chunkMetadata: [
+          {
+            shard: 'sh1',
+            nChunks: 1
+          },
+          {
+            shard: 'sh2',
+            nChunks: 1
+          },
+          {
+            shard: 'sh3',
+            nChunks: 1
+          }
+        ],
+        chunks: [
+          {
+            min: {
+              review_id: MinKey()
+            },
+            max: {
+              review_id: Long('-3074457345618258602')
+            },
+            'on shard': 'sh3',
+            'last modified': Timestamp({ t: 1, i: 0 })
+          },
+          {
+            min: {
+              review_id: Long('-3074457345618258602')
+            },
+            max: {
+              review_id: Long('3074457345618258602')
+            },
+            'on shard': 'sh1',
+            'last modified': Timestamp({ t: 1, i: 1 })
+          },
+          {
+            min: {
+              review_id: Long('3074457345618258602')
+            },
+            max: {
+              review_id: MaxKey()
+            },
+            'on shard': 'sh2',
+            'last modified': Timestamp({ t: 1, i: 2 })
+          }
+        ],
+        tags: []
+      },
+      'yelp.reviews_hashed_seq': {
+        shardKey: {
+          seq: 'hashed'
+        },
+        unique: false,
+        balancing: true,
+        allowMigrations: true,
+        chunkMetadata: [
+          {
+            shard: 'sh1',
+            nChunks: 1
+          },
+          {
+            shard: 'sh2',
+            nChunks: 1
+          },
+          {
+            shard: 'sh3',
+            nChunks: 1
+          }
+        ],
+        chunks: [
+          {
+            min: {
+              seq: MinKey()
+            },
+            max: {
+              seq: Long('-3074457345618258602')
+            },
+            'on shard': 'sh3',
+            'last modified': Timestamp({ t: 1, i: 0 })
+          },
+          {
+            min: {
+              seq: Long('-3074457345618258602')
+            },
+            max: {
+              seq: Long('3074457345618258602')
+            },
+            'on shard': 'sh1',
+            'last modified': Timestamp({ t: 1, i: 1 })
+          },
+          {
+            min: {
+              seq: Long('3074457345618258602')
+            },
+            max: {
+              seq: MaxKey()
+            },
+            'on shard': 'sh2',
+            'last modified': Timestamp({ t: 1, i: 2 })
+          }
+        ],
+        tags: []
+      },
+      'yelp.reviews_range': {
+        shardKey: {
+          seq: 1
+        },
+        unique: false,
+        balancing: true,
+        allowMigrations: true,
+        chunkMetadata: [
+          {
+            shard: 'sh1',
+            nChunks: 1
+          }
+        ],
+        chunks: [
+          {
+            min: {
+              seq: MinKey()
+            },
+            max: {
+              seq: MaxKey()
+            },
+            'on shard': 'sh1',
+            'last modified': Timestamp({ t: 1, i: 0 })
+          }
+        ],
+        tags: []
+      },
+      'yelp.reviews_targeted': {
+        shardKey: {
+          review_id: 'hashed'
+        },
+        unique: false,
+        balancing: true,
+        allowMigrations: true,
+        chunkMetadata: [
+          {
+            shard: 'sh1',
+            nChunks: 1
+          },
+          {
+            shard: 'sh2',
+            nChunks: 1
+          },
+          {
+            shard: 'sh3',
+            nChunks: 1
+          }
+        ],
+        chunks: [
+          {
+            min: {
+              review_id: MinKey()
+            },
+            max: {
+              review_id: Long('-3074457345618258602')
+            },
+            'on shard': 'sh3',
+            'last modified': Timestamp({ t: 1, i: 0 })
+          },
+          {
+            min: {
+              review_id: Long('-3074457345618258602')
+            },
+            max: {
+              review_id: Long('3074457345618258602')
+            },
+            'on shard': 'sh1',
+            'last modified': Timestamp({ t: 1, i: 1 })
+          },
+          {
+            min: {
+              review_id: Long('3074457345618258602')
+            },
+            max: {
+              review_id: MaxKey()
+            },
+            'on shard': 'sh2',
+            'last modified': Timestamp({ t: 1, i: 2 })
+          }
+        ],
+        tags: []
+      }
+    }
+  }
+]

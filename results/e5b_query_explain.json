@@ -1,0 +1,1268 @@
+{
+  "targeted_exact_shard_key": {
+    "filter": {
+      "review_id": "5yFeb_T6SwAX_1HR31ZvNQ"
+    },
+    "explain": {
+      "queryPlanner": {
+        "winningPlan": {
+          "stage": "SINGLE_SHARD",
+          "shards": [
+            {
+              "explainVersion": "1",
+              "shardName": "sh3",
+              "connectionString": "sh3/shard3:27018",
+              "serverInfo": {
+                "host": "70fcc368e309",
+                "port": 27018,
+                "version": "8.0.34",
+                "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+              },
+              "namespace": "yelp.reviews_targeted",
+              "parsedQuery": {
+                "review_id": {
+                  "$eq": "5yFeb_T6SwAX_1HR31ZvNQ"
+                }
+              },
+              "indexFilterSet": false,
+              "queryHash": "E2F6ACED",
+              "planCacheShapeHash": "E2F6ACED",
+              "planCacheKey": "BA51A50C",
+              "optimizationTimeMillis": 0,
+              "maxIndexedOrSolutionsReached": false,
+              "maxIndexedAndSolutionsReached": false,
+              "maxScansToExplodeReached": false,
+              "prunedSimilarIndexes": false,
+              "winningPlan": {
+                "isCached": false,
+                "stage": "PROJECTION_SIMPLE",
+                "transformBy": {
+                  "_id": 1
+                },
+                "inputStage": {
+                  "stage": "FETCH",
+                  "filter": {
+                    "review_id": {
+                      "$eq": "5yFeb_T6SwAX_1HR31ZvNQ"
+                    }
+                  },
+                  "inputStage": {
+                    "stage": "IXSCAN",
+                    "keyPattern": {
+                      "review_id": "hashed"
+                    },
+                    "indexName": "review_id_hashed",
+                    "isMultiKey": false,
+                    "isUnique": false,
+                    "isSparse": false,
+                    "isPartial": false,
+                    "indexVersion": 2,
+                    "direction": "forward",
+                    "indexBounds": {
+                      "review_id": [
+                        "[-8720994857710713922, -8720994857710713922]"
+                      ]
+                    }
+                  }
+                }
+              },
+              "rejectedPlans": []
+            }
+          ]
+        }
+      },
+      "executionStats": {
+        "nReturned": 1,
+        "executionTimeMillis": 0,
+        "totalKeysExamined": 1,
+        "totalDocsExamined": 1,
+        "executionStages": {
+          "stage": "SINGLE_SHARD",
+          "nReturned": 1,
+          "executionTimeMillis": 0,
+          "totalKeysExamined": 1,
+          "totalDocsExamined": 1,
+          "totalChildMillis": 0,
+          "shards": [
+            {
+              "shardName": "sh3",
+              "executionSuccess": true,
+              "nReturned": 1,
+              "executionTimeMillis": 0,
+              "totalKeysExamined": 1,
+              "totalDocsExamined": 1,
+              "executionStages": {
+                "isCached": false,
+                "stage": "PROJECTION_SIMPLE",
+                "nReturned": 1,
+                "executionTimeMillisEstimate": 0,
+                "works": 2,
+                "advanced": 1,
+                "needTime": 0,
+                "needYield": 0,
+                "saveState": 0,
+                "restoreState": 0,
+                "isEOF": 1,
+                "transformBy": {
+                  "_id": 1
+                },
+                "inputStage": {
+                  "stage": "FETCH",
+                  "filter": {
+                    "review_id": {
+                      "$eq": "5yFeb_T6SwAX_1HR31ZvNQ"
+                    }
+                  },
+                  "nReturned": 1,
+                  "executionTimeMillisEstimate": 0,
+                  "works": 2,
+                  "advanced": 1,
+                  "needTime": 0,
+                  "needYield": 0,
+                  "saveState": 0,
+                  "restoreState": 0,
+                  "isEOF": 1,
+                  "docsExamined": 1,
+                  "alreadyHasObj": 0,
+                  "inputStage": {
+                    "stage": "IXSCAN",
+                    "nReturned": 1,
+                    "executionTimeMillisEstimate": 0,
+                    "works": 2,
+                    "advanced": 1,
+                    "needTime": 0,
+                    "needYield": 0,
+                    "saveState": 0,
+                    "restoreState": 0,
+                    "isEOF": 1,
+                    "keyPattern": {
+                      "review_id": "hashed"
+                    },
+                    "indexName": "review_id_hashed",
+                    "isMultiKey": false,
+                    "isUnique": false,
+                    "isSparse": false,
+                    "isPartial": false,
+                    "indexVersion": 2,
+                    "direction": "forward",
+                    "indexBounds": {
+                      "review_id": [
+                        "[-8720994857710713922, -8720994857710713922]"
+                      ]
+                    },
+                    "keysExamined": 1,
+                    "seeks": 1,
+                    "dupsTested": 0,
+                    "dupsDropped": 0
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      "queryShapeHash": "1DEB2D72BE1A0EB4BAB816F44E93ACA8495BA907BCCF469291D6B39FD1600CDE",
+      "serverInfo": {
+        "host": "9e3e0af5ae26",
+        "port": 27017,
+        "version": "8.0.34",
+        "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+      },
+      "serverParameters": {
+        "internalQueryFacetBufferSizeBytes": 104857600,
+        "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+        "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+        "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+        "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+        "internalQueryProhibitBlockingMergeOnMongoS": 0,
+        "internalQueryMaxAddToSetBytes": 104857600,
+        "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+        "internalQueryFrameworkControl": "trySbeRestricted",
+        "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+      },
+      "command": {
+        "find": "reviews_targeted",
+        "filter": {
+          "review_id": "5yFeb_T6SwAX_1HR31ZvNQ"
+        },
+        "projection": {
+          "_id": 1
+        },
+        "lsid": {
+          "id": "b'zqI\\xbd\\xa60OG\\xae\"\\xe0DB:\\x97\\xb0'"
+        },
+        "$clusterTime": {
+          "clusterTime": "Timestamp(1793264507, 1)",
+          "signature": {
+            "hash": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00'",
+            "keyId": 0
+          }
+        },
+        "$db": "yelp"
+      },
+      "ok": 1.0,
+      "$clusterTime": {
+        "clusterTime": "Timestamp(1793264507, 1)",
+        "signature": {
+          "hash": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00'",
+          "keyId": 0
+        }
+      },
+      "operationTime": "Timestamp(1793264507, 1)"
+    },
+    "summary": {
+      "docs_examined": 1,
+      "keys_examined": 1,
+      "explain_ms": 0
+    }
+  },
+  "scatter_gather_business_id": {
+    "filter": {
+      "business_id": "e4Vwtrqf-wpJfwesgvdgxQ"
+    },
+    "explain": {
+      "queryPlanner": {
+        "winningPlan": {
+          "stage": "SHARD_MERGE",
+          "shards": [
+            {
+              "explainVersion": "1",
+              "shardName": "sh3",
+              "connectionString": "sh3/shard3:27018",
+              "serverInfo": {
+                "host": "70fcc368e309",
+                "port": 27018,
+                "version": "8.0.34",
+                "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+              },
+              "namespace": "yelp.reviews_targeted",
+              "parsedQuery": {
+                "business_id": {
+                  "$eq": "e4Vwtrqf-wpJfwesgvdgxQ"
+                }
+              },
+              "indexFilterSet": false,
+              "queryHash": "56E4EBD4",
+              "planCacheShapeHash": "56E4EBD4",
+              "planCacheKey": "C57D3BB5",
+              "optimizationTimeMillis": 0,
+              "maxIndexedOrSolutionsReached": false,
+              "maxIndexedAndSolutionsReached": false,
+              "maxScansToExplodeReached": false,
+              "prunedSimilarIndexes": false,
+              "winningPlan": {
+                "isCached": false,
+                "stage": "PROJECTION_SIMPLE",
+                "transformBy": {
+                  "_id": 1
+                },
+                "inputStage": {
+                  "stage": "SHARDING_FILTER",
+                  "inputStage": {
+                    "stage": "FETCH",
+                    "inputStage": {
+                      "stage": "IXSCAN",
+                      "keyPattern": {
+                        "business_id": 1
+                      },
+                      "indexName": "business_id_1",
+                      "isMultiKey": false,
+                      "multiKeyPaths": {
+                        "business_id": []
+                      },
+                      "isUnique": false,
+                      "isSparse": false,
+                      "isPartial": false,
+                      "indexVersion": 2,
+                      "direction": "forward",
+                      "indexBounds": {
+                        "business_id": [
+                          "[\"e4Vwtrqf-wpJfwesgvdgxQ\", \"e4Vwtrqf-wpJfwesgvdgxQ\"]"
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "rejectedPlans": []
+            },
+            {
+              "explainVersion": "1",
+              "shardName": "sh1",
+              "connectionString": "sh1/shard1:27018",
+              "serverInfo": {
+                "host": "4db431eecb7b",
+                "port": 27018,
+                "version": "8.0.34",
+                "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+              },
+              "namespace": "yelp.reviews_targeted",
+              "parsedQuery": {
+                "business_id": {
+                  "$eq": "e4Vwtrqf-wpJfwesgvdgxQ"
+                }
+              },
+              "indexFilterSet": false,
+              "queryHash": "56E4EBD4",
+              "planCacheShapeHash": "56E4EBD4",
+              "planCacheKey": "C57D3BB5",
+              "optimizationTimeMillis": 0,
+              "maxIndexedOrSolutionsReached": false,
+              "maxIndexedAndSolutionsReached": false,
+              "maxScansToExplodeReached": false,
+              "prunedSimilarIndexes": false,
+              "winningPlan": {
+                "isCached": false,
+                "stage": "PROJECTION_SIMPLE",
+                "transformBy": {
+                  "_id": 1
+                },
+                "inputStage": {
+                  "stage": "SHARDING_FILTER",
+                  "inputStage": {
+                    "stage": "FETCH",
+                    "inputStage": {
+                      "stage": "IXSCAN",
+                      "keyPattern": {
+                        "business_id": 1
+                      },
+                      "indexName": "business_id_1",
+                      "isMultiKey": false,
+                      "multiKeyPaths": {
+                        "business_id": []
+                      },
+                      "isUnique": false,
+                      "isSparse": false,
+                      "isPartial": false,
+                      "indexVersion": 2,
+                      "direction": "forward",
+                      "indexBounds": {
+                        "business_id": [
+                          "[\"e4Vwtrqf-wpJfwesgvdgxQ\", \"e4Vwtrqf-wpJfwesgvdgxQ\"]"
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "rejectedPlans": []
+            },
+            {
+              "explainVersion": "1",
+              "shardName": "sh2",
+              "connectionString": "sh2/shard2:27018",
+              "serverInfo": {
+                "host": "597dfd201a96",
+                "port": 27018,
+                "version": "8.0.34",
+                "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+              },
+              "namespace": "yelp.reviews_targeted",
+              "parsedQuery": {
+                "business_id": {
+                  "$eq": "e4Vwtrqf-wpJfwesgvdgxQ"
+                }
+              },
+              "indexFilterSet": false,
+              "queryHash": "56E4EBD4",
+              "planCacheShapeHash": "56E4EBD4",
+              "planCacheKey": "C57D3BB5",
+              "optimizationTimeMillis": 0,
+              "maxIndexedOrSolutionsReached": false,
+              "maxIndexedAndSolutionsReached": false,
+              "maxScansToExplodeReached": false,
+              "prunedSimilarIndexes": false,
+              "winningPlan": {
+                "isCached": false,
+                "stage": "PROJECTION_SIMPLE",
+                "transformBy": {
+                  "_id": 1
+                },
+                "inputStage": {
+                  "stage": "SHARDING_FILTER",
+                  "inputStage": {
+                    "stage": "FETCH",
+                    "inputStage": {
+                      "stage": "IXSCAN",
+                      "keyPattern": {
+                        "business_id": 1
+                      },
+                      "indexName": "business_id_1",
+                      "isMultiKey": false,
+                      "multiKeyPaths": {
+                        "business_id": []
+                      },
+                      "isUnique": false,
+                      "isSparse": false,
+                      "isPartial": false,
+                      "indexVersion": 2,
+                      "direction": "forward",
+                      "indexBounds": {
+                        "business_id": [
+                          "[\"e4Vwtrqf-wpJfwesgvdgxQ\", \"e4Vwtrqf-wpJfwesgvdgxQ\"]"
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "rejectedPlans": []
+            }
+          ]
+        }
+      },
+      "executionStats": {
+        "nReturned": 8,
+        "executionTimeMillis": 1,
+        "totalKeysExamined": 8,
+        "totalDocsExamined": 8,
+        "executionStages": {
+          "stage": "SHARD_MERGE",
+          "nReturned": 8,
+          "executionTimeMillis": 1,
+          "totalKeysExamined": 8,
+          "totalDocsExamined": 8,
+          "totalChildMillis": 0,
+          "shards": [
+            {
+              "shardName": "sh3",
+              "executionSuccess": true,
+              "nReturned": 5,
+              "executionTimeMillis": 0,
+              "totalKeysExamined": 5,
+              "totalDocsExamined": 5,
+              "executionStages": {
+                "isCached": false,
+                "stage": "PROJECTION_SIMPLE",
+                "nReturned": 5,
+                "executionTimeMillisEstimate": 0,
+                "works": 6,
+                "advanced": 5,
+                "needTime": 0,
+                "needYield": 0,
+                "saveState": 0,
+                "restoreState": 0,
+                "isEOF": 1,
+                "transformBy": {
+                  "_id": 1
+                },
+                "inputStage": {
+                  "stage": "SHARDING_FILTER",
+                  "nReturned": 5,
+                  "executionTimeMillisEstimate": 0,
+                  "works": 6,
+                  "advanced": 5,
+                  "needTime": 0,
+                  "needYield": 0,
+                  "saveState": 0,
+                  "restoreState": 0,
+                  "isEOF": 1,
+                  "chunkSkips": 0,
+                  "inputStage": {
+                    "stage": "FETCH",
+                    "nReturned": 5,
+                    "executionTimeMillisEstimate": 0,
+                    "works": 6,
+                    "advanced": 5,
+                    "needTime": 0,
+                    "needYield": 0,
+                    "saveState": 0,
+                    "restoreState": 0,
+                    "isEOF": 1,
+                    "docsExamined": 5,
+                    "alreadyHasObj": 0,
+                    "inputStage": {
+                      "stage": "IXSCAN",
+                      "nReturned": 5,
+                      "executionTimeMillisEstimate": 0,
+                      "works": 6,
+                      "advanced": 5,
+                      "needTime": 0,
+                      "needYield": 0,
+                      "saveState": 0,
+                      "restoreState": 0,
+                      "isEOF": 1,
+                      "keyPattern": {
+                        "business_id": 1
+                      },
+                      "indexName": "business_id_1",
+                      "isMultiKey": false,
+                      "multiKeyPaths": {
+                        "business_id": []
+                      },
+                      "isUnique": false,
+                      "isSparse": false,
+                      "isPartial": false,
+                      "indexVersion": 2,
+                      "direction": "forward",
+                      "indexBounds": {
+                        "business_id": [
+                          "[\"e4Vwtrqf-wpJfwesgvdgxQ\", \"e4Vwtrqf-wpJfwesgvdgxQ\"]"
+                        ]
+                      },
+                      "keysExamined": 5,
+                      "seeks": 1,
+                      "dupsTested": 0,
+                      "dupsDropped": 0
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "shardName": "sh1",
+              "executionSuccess": true,
+              "nReturned": 2,
+              "executionTimeMillis": 0,
+              "totalKeysExamined": 2,
+              "totalDocsExamined": 2,
+              "executionStages": {
+                "isCached": false,
+                "stage": "PROJECTION_SIMPLE",
+                "nReturned": 2,
+                "executionTimeMillisEstimate": 0,
+                "works": 3,
+                "advanced": 2,
+                "needTime": 0,
+                "needYield": 0,
+                "saveState": 0,
+                "restoreState": 0,
+                "isEOF": 1,
+                "transformBy": {
+                  "_id": 1
+                },
+                "inputStage": {
+                  "stage": "SHARDING_FILTER",
+                  "nReturned": 2,
+                  "executionTimeMillisEstimate": 0,
+                  "works": 3,
+                  "advanced": 2,
+                  "needTime": 0,
+                  "needYield": 0,
+                  "saveState": 0,
+                  "restoreState": 0,
+                  "isEOF": 1,
+                  "chunkSkips": 0,
+                  "inputStage": {
+                    "stage": "FETCH",
+                    "nReturned": 2,
+                    "executionTimeMillisEstimate": 0,
+                    "works": 3,
+                    "advanced": 2,
+                    "needTime": 0,
+                    "needYield": 0,
+                    "saveState": 0,
+                    "restoreState": 0,
+                    "isEOF": 1,
+                    "docsExamined": 2,
+                    "alreadyHasObj": 0,
+                    "inputStage": {
+                      "stage": "IXSCAN",
+                      "nReturned": 2,
+                      "executionTimeMillisEstimate": 0,
+                      "works": 3,
+                      "advanced": 2,
+                      "needTime": 0,
+                      "needYield": 0,
+                      "saveState": 0,
+                      "restoreState": 0,
+                      "isEOF": 1,
+                      "keyPattern": {
+                        "business_id": 1
+                      },
+                      "indexName": "business_id_1",
+                      "isMultiKey": false,
+                      "multiKeyPaths": {
+                        "business_id": []
+                      },
+                      "isUnique": false,
+                      "isSparse": false,
+                      "isPartial": false,
+                      "indexVersion": 2,
+                      "direction": "forward",
+                      "indexBounds": {
+                        "business_id": [
+                          "[\"e4Vwtrqf-wpJfwesgvdgxQ\", \"e4Vwtrqf-wpJfwesgvdgxQ\"]"
+                        ]
+                      },
+                      "keysExamined": 2,
+                      "seeks": 1,
+                      "dupsTested": 0,
+                      "dupsDropped": 0
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "shardName": "sh2",
+              "executionSuccess": true,
+              "nReturned": 1,
+              "executionTimeMillis": 0,
+              "totalKeysExamined": 1,
+              "totalDocsExamined": 1,
+              "executionStages": {
+                "isCached": false,
+                "stage": "PROJECTION_SIMPLE",
+                "nReturned": 1,
+                "executionTimeMillisEstimate": 0,
+                "works": 2,
+                "advanced": 1,
+                "needTime": 0,
+                "needYield": 0,
+                "saveState": 0,
+                "restoreState": 0,
+                "isEOF": 1,
+                "transformBy": {
+                  "_id": 1
+                },
+                "inputStage": {
+                  "stage": "SHARDING_FILTER",
+                  "nReturned": 1,
+                  "executionTimeMillisEstimate": 0,
+                  "works": 2,
+                  "advanced": 1,
+                  "needTime": 0,
+                  "needYield": 0,
+                  "saveState": 0,
+                  "restoreState": 0,
+                  "isEOF": 1,
+                  "chunkSkips": 0,
+                  "inputStage": {
+                    "stage": "FETCH",
+                    "nReturned": 1,
+                    "executionTimeMillisEstimate": 0,
+                    "works": 2,
+                    "advanced": 1,
+                    "needTime": 0,
+                    "needYield": 0,
+                    "saveState": 0,
+                    "restoreState": 0,
+                    "isEOF": 1,
+                    "docsExamined": 1,
+                    "alreadyHasObj": 0,
+                    "inputStage": {
+                      "stage": "IXSCAN",
+                      "nReturned": 1,
+                      "executionTimeMillisEstimate": 0,
+                      "works": 2,
+                      "advanced": 1,
+                      "needTime": 0,
+                      "needYield": 0,
+                      "saveState": 0,
+                      "restoreState": 0,
+                      "isEOF": 1,
+                      "keyPattern": {
+                        "business_id": 1
+                      },
+                      "indexName": "business_id_1",
+                      "isMultiKey": false,
+                      "multiKeyPaths": {
+                        "business_id": []
+                      },
+                      "isUnique": false,
+                      "isSparse": false,
+                      "isPartial": false,
+                      "indexVersion": 2,
+                      "direction": "forward",
+                      "indexBounds": {
+                        "business_id": [
+                          "[\"e4Vwtrqf-wpJfwesgvdgxQ\", \"e4Vwtrqf-wpJfwesgvdgxQ\"]"
+                        ]
+                      },
+                      "keysExamined": 1,
+                      "seeks": 1,
+                      "dupsTested": 0,
+                      "dupsDropped": 0
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      "queryShapeHash": "EA35D68529ED1413B103B0FB3EB3E2A852578F2FC800943239DE8FEAEE2AC4FC",
+      "serverInfo": {
+        "host": "9e3e0af5ae26",
+        "port": 27017,
+        "version": "8.0.34",
+        "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+      },
+      "serverParameters": {
+        "internalQueryFacetBufferSizeBytes": 104857600,
+        "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+        "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+        "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+        "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+        "internalQueryProhibitBlockingMergeOnMongoS": 0,
+        "internalQueryMaxAddToSetBytes": 104857600,
+        "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+        "internalQueryFrameworkControl": "trySbeRestricted",
+        "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+      },
+      "command": {
+        "find": "reviews_targeted",
+        "filter": {
+          "business_id": "e4Vwtrqf-wpJfwesgvdgxQ"
+        },
+        "projection": {
+          "_id": 1
+        },
+        "lsid": {
+          "id": "b'zqI\\xbd\\xa60OG\\xae\"\\xe0DB:\\x97\\xb0'"
+        },
+        "$clusterTime": {
+          "clusterTime": "Timestamp(1793264507, 1)",
+          "signature": {
+            "hash": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00'",
+            "keyId": 0
+          }
+        },
+        "$db": "yelp"
+      },
+      "ok": 1.0,
+      "$clusterTime": {
+        "clusterTime": "Timestamp(1793264507, 1)",
+        "signature": {
+          "hash": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00'",
+          "keyId": 0
+        }
+      },
+      "operationTime": "Timestamp(1793264507, 1)"
+    },
+    "summary": {
+      "docs_examined": 8,
+      "keys_examined": 8,
+      "explain_ms": 1
+    }
+  },
+  "scatter_gather_range_on_hashed_key": {
+    "filter": {
+      "review_id": {
+        "$gte": "FKeSOkrvzy5Gzu88Zw70dQ",
+        "$lt": "k5CAAqw1cGz0K2jcNuIpcA"
+      }
+    },
+    "explain": {
+      "queryPlanner": {
+        "winningPlan": {
+          "stage": "SHARD_MERGE",
+          "shards": [
+            {
+              "explainVersion": "1",
+              "shardName": "sh1",
+              "connectionString": "sh1/shard1:27018",
+              "serverInfo": {
+                "host": "4db431eecb7b",
+                "port": 27018,
+                "version": "8.0.34",
+                "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+              },
+              "namespace": "yelp.reviews_targeted",
+              "parsedQuery": {
+                "$and": [
+                  {
+                    "review_id": {
+                      "$lt": "k5CAAqw1cGz0K2jcNuIpcA"
+                    }
+                  },
+                  {
+                    "review_id": {
+                      "$gte": "FKeSOkrvzy5Gzu88Zw70dQ"
+                    }
+                  }
+                ]
+              },
+              "indexFilterSet": false,
+              "queryHash": "13444B48",
+              "planCacheShapeHash": "13444B48",
+              "planCacheKey": "CB65B331",
+              "optimizationTimeMillis": 0,
+              "maxIndexedOrSolutionsReached": false,
+              "maxIndexedAndSolutionsReached": false,
+              "maxScansToExplodeReached": false,
+              "prunedSimilarIndexes": false,
+              "winningPlan": {
+                "isCached": false,
+                "stage": "LIMIT",
+                "limitAmount": 100,
+                "inputStage": {
+                  "stage": "PROJECTION_SIMPLE",
+                  "transformBy": {
+                    "_id": 1
+                  },
+                  "inputStage": {
+                    "stage": "SHARDING_FILTER",
+                    "inputStage": {
+                      "stage": "COLLSCAN",
+                      "filter": {
+                        "$and": [
+                          {
+                            "review_id": {
+                              "$lt": "k5CAAqw1cGz0K2jcNuIpcA"
+                            }
+                          },
+                          {
+                            "review_id": {
+                              "$gte": "FKeSOkrvzy5Gzu88Zw70dQ"
+                            }
+                          }
+                        ]
+                      },
+                      "direction": "forward"
+                    }
+                  }
+                }
+              },
+              "rejectedPlans": []
+            },
+            {
+              "explainVersion": "1",
+              "shardName": "sh3",
+              "connectionString": "sh3/shard3:27018",
+              "serverInfo": {
+                "host": "70fcc368e309",
+                "port": 27018,
+                "version": "8.0.34",
+                "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+              },
+              "namespace": "yelp.reviews_targeted",
+              "parsedQuery": {
+                "$and": [
+                  {
+                    "review_id": {
+                      "$lt": "k5CAAqw1cGz0K2jcNuIpcA"
+                    }
+                  },
+                  {
+                    "review_id": {
+                      "$gte": "FKeSOkrvzy5Gzu88Zw70dQ"
+                    }
+                  }
+                ]
+              },
+              "indexFilterSet": false,
+              "queryHash": "13444B48",
+              "planCacheShapeHash": "13444B48",
+              "planCacheKey": "CB65B331",
+              "optimizationTimeMillis": 0,
+              "maxIndexedOrSolutionsReached": false,
+              "maxIndexedAndSolutionsReached": false,
+              "maxScansToExplodeReached": false,
+              "prunedSimilarIndexes": false,
+              "winningPlan": {
+                "isCached": false,
+                "stage": "LIMIT",
+                "limitAmount": 100,
+                "inputStage": {
+                  "stage": "PROJECTION_SIMPLE",
+                  "transformBy": {
+                    "_id": 1
+                  },
+                  "inputStage": {
+                    "stage": "SHARDING_FILTER",
+                    "inputStage": {
+                      "stage": "COLLSCAN",
+                      "filter": {
+                        "$and": [
+                          {
+                            "review_id": {
+                              "$lt": "k5CAAqw1cGz0K2jcNuIpcA"
+                            }
+                          },
+                          {
+                            "review_id": {
+                              "$gte": "FKeSOkrvzy5Gzu88Zw70dQ"
+                            }
+                          }
+                        ]
+                      },
+                      "direction": "forward"
+                    }
+                  }
+                }
+              },
+              "rejectedPlans": []
+            },
+            {
+              "explainVersion": "1",
+              "shardName": "sh2",
+              "connectionString": "sh2/shard2:27018",
+              "serverInfo": {
+                "host": "597dfd201a96",
+                "port": 27018,
+                "version": "8.0.34",
+                "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+              },
+              "namespace": "yelp.reviews_targeted",
+              "parsedQuery": {
+                "$and": [
+                  {
+                    "review_id": {
+                      "$lt": "k5CAAqw1cGz0K2jcNuIpcA"
+                    }
+                  },
+                  {
+                    "review_id": {
+                      "$gte": "FKeSOkrvzy5Gzu88Zw70dQ"
+                    }
+                  }
+                ]
+              },
+              "indexFilterSet": false,
+              "queryHash": "13444B48",
+              "planCacheShapeHash": "13444B48",
+              "planCacheKey": "CB65B331",
+              "optimizationTimeMillis": 0,
+              "maxIndexedOrSolutionsReached": false,
+              "maxIndexedAndSolutionsReached": false,
+              "maxScansToExplodeReached": false,
+              "prunedSimilarIndexes": false,
+              "winningPlan": {
+                "isCached": false,
+                "stage": "LIMIT",
+                "limitAmount": 100,
+                "inputStage": {
+                  "stage": "PROJECTION_SIMPLE",
+                  "transformBy": {
+                    "_id": 1
+                  },
+                  "inputStage": {
+                    "stage": "SHARDING_FILTER",
+                    "inputStage": {
+                      "stage": "COLLSCAN",
+                      "filter": {
+                        "$and": [
+                          {
+                            "review_id": {
+                              "$lt": "k5CAAqw1cGz0K2jcNuIpcA"
+                            }
+                          },
+                          {
+                            "review_id": {
+                              "$gte": "FKeSOkrvzy5Gzu88Zw70dQ"
+                            }
+                          }
+                        ]
+                      },
+                      "direction": "forward"
+                    }
+                  }
+                }
+              },
+              "rejectedPlans": []
+            }
+          ]
+        }
+      },
+      "executionStats": {
+        "nReturned": 300,
+        "executionTimeMillis": 1,
+        "totalKeysExamined": 0,
+        "totalDocsExamined": 603,
+        "executionStages": {
+          "stage": "SHARD_MERGE",
+          "nReturned": 300,
+          "executionTimeMillis": 1,
+          "totalKeysExamined": 0,
+          "totalDocsExamined": 603,
+          "totalChildMillis": 0,
+          "shards": [
+            {
+              "shardName": "sh1",
+              "executionSuccess": true,
+              "nReturned": 100,
+              "executionTimeMillis": 0,
+              "totalKeysExamined": 0,
+              "totalDocsExamined": 187,
+              "executionStages": {
+                "isCached": false,
+                "stage": "LIMIT",
+                "nReturned": 100,
+                "executionTimeMillisEstimate": 0,
+                "works": 188,
+                "advanced": 100,
+                "needTime": 87,
+                "needYield": 0,
+                "saveState": 0,
+                "restoreState": 0,
+                "isEOF": 1,
+                "limitAmount": 100,
+                "inputStage": {
+                  "stage": "PROJECTION_SIMPLE",
+                  "nReturned": 100,
+                  "executionTimeMillisEstimate": 0,
+                  "works": 187,
+                  "advanced": 100,
+                  "needTime": 87,
+                  "needYield": 0,
+                  "saveState": 0,
+                  "restoreState": 0,
+                  "isEOF": 0,
+                  "transformBy": {
+                    "_id": 1
+                  },
+                  "inputStage": {
+                    "stage": "SHARDING_FILTER",
+                    "nReturned": 100,
+                    "executionTimeMillisEstimate": 0,
+                    "works": 187,
+                    "advanced": 100,
+                    "needTime": 87,
+                    "needYield": 0,
+                    "saveState": 0,
+                    "restoreState": 0,
+                    "isEOF": 0,
+                    "chunkSkips": 0,
+                    "inputStage": {
+                      "stage": "COLLSCAN",
+                      "filter": {
+                        "$and": [
+                          {
+                            "review_id": {
+                              "$lt": "k5CAAqw1cGz0K2jcNuIpcA"
+                            }
+                          },
+                          {
+                            "review_id": {
+                              "$gte": "FKeSOkrvzy5Gzu88Zw70dQ"
+                            }
+                          }
+                        ]
+                      },
+                      "nReturned": 100,
+                      "executionTimeMillisEstimate": 0,
+                      "works": 187,
+                      "advanced": 100,
+                      "needTime": 87,
+                      "needYield": 0,
+                      "saveState": 0,
+                      "restoreState": 0,
+                      "isEOF": 0,
+                      "direction": "forward",
+                      "docsExamined": 187
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "shardName": "sh3",
+              "executionSuccess": true,
+              "nReturned": 100,
+              "executionTimeMillis": 0,
+              "totalKeysExamined": 0,
+              "totalDocsExamined": 199,
+              "executionStages": {
+                "isCached": false,
+                "stage": "LIMIT",
+                "nReturned": 100,
+                "executionTimeMillisEstimate": 0,
+                "works": 200,
+                "advanced": 100,
+                "needTime": 99,
+                "needYield": 0,
+                "saveState": 0,
+                "restoreState": 0,
+                "isEOF": 1,
+                "limitAmount": 100,
+                "inputStage": {
+                  "stage": "PROJECTION_SIMPLE",
+                  "nReturned": 100,
+                  "executionTimeMillisEstimate": 0,
+                  "works": 199,
+                  "advanced": 100,
+                  "needTime": 99,
+                  "needYield": 0,
+                  "saveState": 0,
+                  "restoreState": 0,
+                  "isEOF": 0,
+                  "transformBy": {
+                    "_id": 1
+                  },
+                  "inputStage": {
+                    "stage": "SHARDING_FILTER",
+                    "nReturned": 100,
+                    "executionTimeMillisEstimate": 0,
+                    "works": 199,
+                    "advanced": 100,
+                    "needTime": 99,
+                    "needYield": 0,
+                    "saveState": 0,
+                    "restoreState": 0,
+                    "isEOF": 0,
+                    "chunkSkips": 0,
+                    "inputStage": {
+                      "stage": "COLLSCAN",
+                      "filter": {
+                        "$and": [
+                          {
+                            "review_id": {
+                              "$lt": "k5CAAqw1cGz0K2jcNuIpcA"
+                            }
+                          },
+                          {
+                            "review_id": {
+                              "$gte": "FKeSOkrvzy5Gzu88Zw70dQ"
+                            }
+                          }
+                        ]
+                      },
+                      "nReturned": 100,
+                      "executionTimeMillisEstimate": 0,
+                      "works": 199,
+                      "advanced": 100,
+                      "needTime": 99,
+                      "needYield": 0,
+                      "saveState": 0,
+                      "restoreState": 0,
+                      "isEOF": 0,
+                      "direction": "forward",
+                      "docsExamined": 199
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "shardName": "sh2",
+              "executionSuccess": true,
+              "nReturned": 100,
+              "executionTimeMillis": 0,
+              "totalKeysExamined": 0,
+              "totalDocsExamined": 217,
+              "executionStages": {
+                "isCached": false,
+                "stage": "LIMIT",
+                "nReturned": 100,
+                "executionTimeMillisEstimate": 0,
+                "works": 218,
+                "advanced": 100,
+                "needTime": 117,
+                "needYield": 0,
+                "saveState": 0,
+                "restoreState": 0,
+                "isEOF": 1,
+                "limitAmount": 100,
+                "inputStage": {
+                  "stage": "PROJECTION_SIMPLE",
+                  "nReturned": 100,
+                  "executionTimeMillisEstimate": 0,
+                  "works": 217,
+                  "advanced": 100,
+                  "needTime": 117,
+                  "needYield": 0,
+                  "saveState": 0,
+                  "restoreState": 0,
+                  "isEOF": 0,
+                  "transformBy": {
+                    "_id": 1
+                  },
+                  "inputStage": {
+                    "stage": "SHARDING_FILTER",
+                    "nReturned": 100,
+                    "executionTimeMillisEstimate": 0,
+                    "works": 217,
+                    "advanced": 100,
+                    "needTime": 117,
+                    "needYield": 0,
+                    "saveState": 0,
+                    "restoreState": 0,
+                    "isEOF": 0,
+                    "chunkSkips": 0,
+                    "inputStage": {
+                      "stage": "COLLSCAN",
+                      "filter": {
+                        "$and": [
+                          {
+                            "review_id": {
+                              "$lt": "k5CAAqw1cGz0K2jcNuIpcA"
+                            }
+                          },
+                          {
+                            "review_id": {
+                              "$gte": "FKeSOkrvzy5Gzu88Zw70dQ"
+                            }
+                          }
+                        ]
+                      },
+                      "nReturned": 100,
+                      "executionTimeMillisEstimate": 0,
+                      "works": 217,
+                      "advanced": 100,
+                      "needTime": 117,
+                      "needYield": 0,
+                      "saveState": 0,
+                      "restoreState": 0,
+                      "isEOF": 0,
+                      "direction": "forward",
+                      "docsExamined": 217
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      "queryShapeHash": "2C23291259E65D1F8B2E83903504AE8160EEECF8A1817D2ED4C101FD5EDB9085",
+      "serverInfo": {
+        "host": "9e3e0af5ae26",
+        "port": 27017,
+        "version": "8.0.34",
+        "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+      },
+      "serverParameters": {
+        "internalQueryFacetBufferSizeBytes": 104857600,
+        "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+        "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+        "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+        "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+        "internalQueryProhibitBlockingMergeOnMongoS": 0,
+        "internalQueryMaxAddToSetBytes": 104857600,
+        "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+        "internalQueryFrameworkControl": "trySbeRestricted",
+        "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+      },
+      "command": {
+        "find": "reviews_targeted",
+        "filter": {
+          "review_id": {
+            "$gte": "FKeSOkrvzy5Gzu88Zw70dQ",
+            "$lt": "k5CAAqw1cGz0K2jcNuIpcA"
+          }
+        },
+        "projection": {
+          "_id": 1
+        },
+        "limit": 100,
+        "lsid": {
+          "id": "b'zqI\\xbd\\xa60OG\\xae\"\\xe0DB:\\x97\\xb0'"
+        },
+        "$clusterTime": {
+          "clusterTime": "Timestamp(1793264513, 1)",
+          "signature": {
+            "hash": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00'",
+            "keyId": 0
+          }
+        },
+        "$db": "yelp"
+      },
+      "ok": 1.0,
+      "$clusterTime": {
+        "clusterTime": "Timestamp(1793264513, 1)",
+        "signature": {
+          "hash": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00'",
+          "keyId": 0
+        }
+      },
+      "operationTime": "Timestamp(1793264507, 1)"
+    },
+    "summary": {
+      "docs_examined": 603,
+      "keys_examined": 0,
+      "explain_ms": 1
+    }
+  }
+}

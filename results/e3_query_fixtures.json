@@ -1,0 +1,9 @@
+{
+  "business_id": "LGi-u2zVoSciM0F_2nSg8g",
+  "user_id": "zfD3xhVNkGJs-AOOSslqtQ",
+  "date_gte": "2013-09-01",
+  "date_lt": "2013-10-01",
+  "seed": 42,
+  "fixture_source": "deterministically selected from the first 2,000 natural-order documents in the initial checkpoint",
+  "first_run_n_docs": 500000
+}

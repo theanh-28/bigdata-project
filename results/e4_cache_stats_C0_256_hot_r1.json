@@ -1,0 +1,16 @@
+{
+  "before": {
+    "bytes currently in the cache": 239951818,
+    "maximum bytes configured": 274726912,
+    "pages read into cache": 122812,
+    "pages written from cache": 12,
+    "pages requested from the cache": 384790
+  },
+  "after": {
+    "bytes currently in the cache": 217335667,
+    "maximum bytes configured": 274726912,
+    "pages read into cache": 181591,
+    "pages written from cache": 16,
+    "pages requested from the cache": 634831
+  }
+}
